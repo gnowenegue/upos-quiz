@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Part-of-Speech (UPOS) Interactive Quiz</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #090d16;
+            --card-bg: rgba(17, 24, 39, 0.7);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --accent-color: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --success-color: #10b981;
+            --success-glow: rgba(16, 185, 129, 0.15);
+            --error-color: #ef4444;
+            --error-glow: rgba(239, 68, 68, 0.15);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            
+            --simple-color: #3b82f6;
+            --hard-color: #f59e0b;
+            --tricky-color: #ec4899;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.05) 0%, transparent 40%);
+        }
+
+        header {
+            padding: 24px 40px;
+            border-bottom: 1px solid var(--card-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            background: rgba(9, 13, 22, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 24px;
+            background: linear-gradient(135deg, #a5b4fc, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .stats-bar {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 8px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .stat-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+        }
+
+        .stat-value {
+            font-size: 18px;
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .main-layout {
+            display: flex;
+            flex: 1;
+            position: relative;
+        }
+
+        /* Sidebar navigation */
+        .sidebar {
+            width: 320px;
+            border-right: 1px solid var(--card-border);
+            padding: 24px;
+            background: rgba(9, 13, 22, 0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            height: calc(100vh - 86px);
+            position: sticky;
+            top: 86px;
+            overflow-y: auto;
+        }
+
+        .sidebar-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--text-primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Shuffle Toggle */
+        .shuffle-switch {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            cursor: pointer;
+            user-select: none;
+            color: var(--text-secondary);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--card-border);
+            padding: 4px 8px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+        }
+
+        .shuffle-switch:hover {
+            border-color: var(--accent-color);
+            color: var(--text-primary);
+        }
+
+        .shuffle-switch input {
+            display: none;
+        }
+
+        .shuffle-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--text-secondary);
+            transition: all 0.2s ease;
+        }
+
+        .shuffle-switch input:checked + .shuffle-dot {
+            background: var(--success-color);
+            box-shadow: 0 0 8px var(--success-color);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+        }
+
+        .grid-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text-secondary);
+            aspect-ratio: 1;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .grid-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        .grid-btn.active {
+            border-color: var(--accent-color);
+            background: var(--accent-glow);
+            color: #818cf8;
+            box-shadow: 0 0 12px var(--accent-glow);
+        }
+
+        .grid-btn.correct {
+            border-color: var(--success-color);
+            background: var(--success-glow);
+            color: var(--success-color);
+        }
+
+        .grid-btn.incorrect {
+            border-color: var(--error-color);
+            background: var(--error-glow);
+            color: var(--error-color);
+        }
+
+        /* Main Workspace */
+        .workspace {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .sentence-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .difficulty-badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .difficulty-badge.simple {
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--simple-color);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .difficulty-badge.hard {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--hard-color);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+
+        .difficulty-badge.tricky {
+            background: rgba(236, 72, 153, 0.15);
+            color: var(--tricky-color);
+            border: 1px solid rgba(236, 72, 153, 0.3);
+        }
+
+        .sentence-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(20px);
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .sentence-text-display {
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 1.5;
+            color: var(--text-primary);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 16px;
+        }
+
+        .interactive-area {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .word-token {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-width: 100px;
+        }
+
+        .word-label {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            word-break: break-all;
+        }
+
+        select {
+            background: #111827;
+            color: var(--text-secondary);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            outline: none;
+            width: 100%;
+        }
+
+        select:focus {
+            border-color: var(--accent-color);
+            color: var(--text-primary);
+        }
+
+        select.correct {
+            border-color: var(--success-color);
+            color: var(--success-color);
+            background: var(--success-glow);
+        }
+
+        select.incorrect {
+            border-color: var(--error-color);
+            color: var(--error-color);
+            background: var(--error-glow);
+        }
+
+        .correct-reveal {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--success-color);
+            margin-top: 2px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 12px 24px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--card-border);
+            color: var(--text-secondary);
+            box-shadow: none;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-primary);
+            color: var(--text-primary);
+            box-shadow: none;
+        }
+
+        /* Explanation Box */
+        .explanation-card {
+            background: rgba(16, 185, 129, 0.03);
+            border: 1px solid rgba(16, 185, 129, 0.15);
+            border-radius: 16px;
+            padding: 24px;
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .explanation-title {
+            color: var(--success-color);
+            font-weight: 700;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid rgba(16, 185, 129, 0.15);
+            padding-bottom: 8px;
+        }
+
+        .explanation-text {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .explanation-text ul {
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .explanation-text li {
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .explanation-text li::before {
+            content: "•";
+            color: var(--success-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .explanation-text strong {
+            color: var(--text-primary);
+        }
+
+        .explanation-text code {
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            color: #818cf8;
+            font-weight: 700;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        /* Help Info */
+        .legend-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 16px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .legend-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .legend-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        /* Tag Reference Grid in sidebar */
+        .tag-ref {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4px;
+            font-size: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            padding: 8px;
+            border: 1px solid var(--card-border);
+        }
+
+        .tag-ref-item {
+            text-align: center;
+            padding: 2px;
+            color: var(--text-secondary);
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 4px;
+        }
+
+        /* Keyboard Badges */
+        .key-badge {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 4px;
+            padding: 2px 5px;
+            font-size: 9px;
+            font-family: monospace;
+            font-weight: 700;
+            color: var(--text-primary);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Jump Overlay */
+        .jump-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .jump-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .jump-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 24px;
+            width: 300px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            transform: scale(0.95);
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .jump-overlay.active .jump-card {
+            transform: scale(1);
+        }
+
+        .jump-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-align: center;
+        }
+
+        .jump-input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 12px;
+            font-size: 16px;
+            color: var(--text-primary);
+            text-align: center;
+            outline: none;
+            font-family: inherit;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .jump-input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+
+        .jump-help {
+            font-size: 11px;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>UPOS Interactive Quiz</h1>
+        <div class="stats-bar">
+            <div class="stat-card">
+                <span class="stat-label">Progress</span>
+                <span id="progress-val" class="stat-value">0 / 50</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Correct</span>
+                <span id="score-val" class="stat-value">0%</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-title">
+                <span>Select Sentence</span>
+                <label class="shuffle-switch" title="Randomize sentence order">
+                    <input type="checkbox" id="shuffle-toggle">
+                    <span class="shuffle-dot"></span>
+                    <span>Shuffle</span>
+                </label>
+            </div>
+            <div id="sentence-grid" class="grid-container">
+                <!-- Javascript will inject 50 buttons here -->
+            </div>
+            
+            <div class="sidebar-title" style="margin-top: 10px;">Universal Tags Ref</div>
+            <div class="tag-ref">
+                <div class="tag-ref-item" title="Adjective">ADJ</div>
+                <div class="tag-ref-item" title="Adposition">ADP</div>
+                <div class="tag-ref-item" title="Adverb">ADV</div>
+                <div class="tag-ref-item" title="Auxiliary">AUX</div>
+                <div class="tag-ref-item" title="Coordinating Conjunction">CCONJ</div>
+                <div class="tag-ref-item" title="Determiner">DET</div>
+                <div class="tag-ref-item" title="Interjection">INTJ</div>
+                <div class="tag-ref-item" title="Noun">NOUN</div>
+                <div class="tag-ref-item" title="Numeral">NUM</div>
+                <div class="tag-ref-item" title="Particle">PART</div>
+                <div class="tag-ref-item" title="Pronoun">PRON</div>
+                <div class="tag-ref-item" title="Proper Noun">PROPN</div>
+                <div class="tag-ref-item" title="Punctuation">PUNCT</div>
+                <div class="tag-ref-item" title="Subordinating Conjunction">SCONJ</div>
+                <div class="tag-ref-item" title="Symbol">SYM</div>
+                <div class="tag-ref-item" title="Verb">VERB</div>
+                <div class="tag-ref-item" title="Other">X</div>
+            </div>
+        </div>
+
+        <!-- Main Workspace -->
+        <div class="workspace">
+            
+            <div class="sentence-header">
+                <h2 id="sentence-label" style="font-family: 'Outfit', sans-serif;">Sentence 1</h2>
+                <span id="difficulty-badge" class="difficulty-badge simple">Simple</span>
+            </div>
+
+            <!-- Quiz Card -->
+            <div class="sentence-card">
+                <div id="sentence-text" class="sentence-text-display">
+                    The dog barked at the cat.
+                </div>
+                
+                <div id="interactive-area" class="interactive-area">
+                    <!-- Javascript will inject word labels & dropdowns here -->
+                </div>
+
+                <div class="controls">
+                    <button id="check-btn" class="btn">Check Answers</button>
+                    <div class="nav-buttons">
+                        <button id="prev-btn" class="btn btn-secondary">Previous</button>
+                        <button id="next-btn" class="btn">Next</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Explanation Box -->
+            <div id="explanation-box" class="explanation-card">
+                <div class="explanation-title">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    Grammar Rules & Token Explanations
+                </div>
+                <div id="explanation-text" class="explanation-text">
+                    This is standard.
+                </div>
+            </div>
+
+            <!-- Legend/Reference -->
+            <div class="legend-card">
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <span class="legend-dot" style="background-color: var(--simple-color);"></span>
+                        <span>Simple (1-15)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot" style="background-color: var(--hard-color);"></span>
+                        <span>Hard (16-50)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot" style="background-color: var(--tricky-color);"></span>
+                        <span>Tricky (51-100)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Keyboard Shortcuts Card -->
+            <div class="legend-card" style="margin-top: 12px;">
+                <div style="font-weight: 700; color: var(--text-primary); margin-bottom: 8px; display: flex; align-items: center; gap: 6px; font-family: 'Outfit', sans-serif; font-size: 13px;">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect><line x1="6" y1="8" x2="6.01" y2="8"></line><line x1="10" y1="8" x2="10.01" y2="8"></line><line x1="14" y1="8" x2="14.01" y2="8"></line><line x1="18" y1="8" x2="18.01" y2="8"></line><line x1="6" y1="12" x2="6.01" y2="12"></line><line x1="10" y1="12" x2="10.01" y2="12"></line><line x1="14" y1="12" x2="14.01" y2="12"></line><line x1="18" y1="12" x2="18.01" y2="12"></line><line x1="7" y1="16" x2="17" y2="16"></line></svg>
+                    Keyboard Navigation & Hotkeys
+                </div>
+                <div class="legend-items" style="gap: 12px 16px;">
+                    <div class="legend-item"><span class="key-badge">Tab</span> / <span class="key-badge">Shift + Tab</span> <span style="margin-left: 4px;">Move between word selectors</span></div>
+                    <div class="legend-item"><span class="key-badge">←</span> / <span class="key-badge">→</span> <span style="margin-left: 4px;">Move active word focus (inside interactive area)</span></div>
+                    <div class="legend-item"><span class="key-badge">←</span> / <span class="key-badge">→</span> <span style="margin-left: 4px;">Previous / Next Sentence (globally)</span></div>
+                    <div class="legend-item"><span class="key-badge">Enter</span> <span style="margin-left: 4px;">Check Answers / Try Again</span></div>
+                    <div class="legend-item"><span class="key-badge">S</span> <span style="margin-left: 4px;">Toggle Shuffle</span></div>
+                    <div class="legend-item"><span class="key-badge">G</span> <span style="margin-left: 4px;">Jump to Sentence</span></div>
+                </div>
+            </div>
+
+            <!-- Beautiful Jump to Sentence Overlay -->
+            <div id="jump-overlay" class="jump-overlay">
+                <div class="jump-card">
+                    <div class="jump-title">Jump to Sentence</div>
+                    <input type="number" id="jump-input" class="jump-input" placeholder="Enter number (1-100)..." min="1" max="100">
+                    <div class="jump-help">Press <span class="key-badge">Enter</span> to Go, <span class="key-badge">Esc</span> to Cancel</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript Data and Core Logic -->
+    <script>
+        let sentences = [];
+        let activeSentences = [];
+        let currentIndex = 0;
+        const userAnswers = {}; // Stores checked answers: { sentenceId: { tokenIdx: { selected: '...', isCorrect: true/false } } }
+
+        const uposTags = [
+            "ADJ", "ADP", "ADV", "AUX", "CCONJ", "DET", "INTJ", "NOUN", "NUM", "PART", "PRON", "PROPN", "PUNCT", "SCONJ", "SYM", "VERB", "X"
+        ];
+
+        // Elements
+        const sentenceLabel = document.getElementById("sentence-label");
+        const difficultyBadge = document.getElementById("difficulty-badge");
+        const sentenceText = document.getElementById("sentence-text");
+        const interactiveArea = document.getElementById("interactive-area");
+        const checkBtn = document.getElementById("check-btn");
+        const prevBtn = document.getElementById("prev-btn");
+        const nextBtn = document.getElementById("next-btn");
+        const explanationBox = document.getElementById("explanation-box");
+        const explanationText = document.getElementById("explanation-text");
+        const scoreVal = document.getElementById("score-val");
+        const progressVal = document.getElementById("progress-val");
+        const sentenceGrid = document.getElementById("sentence-grid");
+        const shuffleToggle = document.getElementById("shuffle-toggle");
+
+        // Fisher-Yates Shuffle
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // Initialize grid buttons
+        function initGrid() {
+            sentenceGrid.innerHTML = "";
+            activeSentences.forEach((s, idx) => {
+                const btn = document.createElement("button");
+                btn.className = "grid-btn";
+                btn.id = `grid-btn-${s.id}`;
+                btn.innerText = s.id;
+                btn.addEventListener("click", () => loadSentence(idx));
+                
+                // Restore completed classes
+                if (userAnswers[s.id]) {
+                    let allCorrect = true;
+                    s.tokens.forEach((_, tIdx) => {
+                        if (!userAnswers[s.id][tIdx]?.isCorrect) allCorrect = false;
+                    });
+                    btn.classList.add(allCorrect ? "correct" : "incorrect");
+                }
+
+                sentenceGrid.appendChild(btn);
+            });
+        }
+
+        // Handle Shuffle Toggle
+        shuffleToggle.addEventListener("change", (e) => {
+            const currentSentenceId = activeSentences[currentIndex].id;
+            
+            if (e.target.checked) {
+                // Shuffle copy of array
+                activeSentences = [...sentences];
+                shuffle(activeSentences);
+            } else {
+                // Restore ordered array
+                activeSentences = [...sentences];
+            }
+            
+            // Find where our current sentence moved to
+            const newIdx = activeSentences.findIndex(x => x.id === currentSentenceId);
+            
+            initGrid();
+            loadSentence(newIdx);
+        });
+
+        const tagNames = {
+            "ADJ": "Adjective",
+            "ADP": "Adposition / Preposition",
+            "ADV": "Adverb",
+            "AUX": "Auxiliary Verb",
+            "CCONJ": "Coordinating Conjunction",
+            "DET": "Determiner",
+            "INTJ": "Interjection",
+            "NOUN": "Noun",
+            "NUM": "Numeral",
+            "PART": "Particle",
+            "PRON": "Pronoun",
+            "PROPN": "Proper Noun",
+            "PUNCT": "Punctuation",
+            "SCONJ": "Subordinating Conjunction",
+            "SYM": "Symbol",
+            "VERB": "Verb",
+            "X": "Other"
+        };
+
+        // Helper to parse basic markdown **bold**, *italics*, and `code` to HTML
+        function formatExplanation(text) {
+            if (!text) return "";
+            return text
+                .replace(/\n\n/g, '<br><br>')
+                .replace(/\n/g, '<br>')
+                .replace(/\*\*(.*?)\*\//g, '<strong>$1</strong>')
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/`(.*?)`/g, '<code>$1</code>');
+        }
+
+        // Helper to dynamically build complete token list HTML with custom grammar explanations
+        function generateTokenBreakdown(s) {
+            const tagColors = {
+                "NOUN": { bg: "rgba(59, 130, 246, 0.1)", border: "rgba(59, 130, 246, 0.3)", text: "#60a5fa" },
+                "PROPN": { bg: "rgba(6, 182, 212, 0.1)", border: "rgba(6, 182, 212, 0.3)", text: "#22d3ee" },
+                "VERB": { bg: "rgba(16, 185, 129, 0.1)", border: "rgba(16, 185, 129, 0.3)", text: "#34d399" },
+                "AUX": { bg: "rgba(52, 211, 153, 0.08)", border: "rgba(52, 211, 153, 0.2)", text: "#a7f3d0" },
+                "ADJ": { bg: "rgba(139, 92, 246, 0.1)", border: "rgba(139, 92, 246, 0.3)", text: "#a78bfa" },
+                "ADV": { bg: "rgba(236, 72, 153, 0.1)", border: "rgba(236, 72, 153, 0.3)", text: "#f472b6" },
+                "PRON": { bg: "rgba(245, 158, 11, 0.1)", border: "rgba(245, 158, 11, 0.3)", text: "#fbbf24" },
+                "DET": { bg: "rgba(251, 191, 36, 0.08)", border: "rgba(251, 191, 36, 0.25)", text: "#fde047" },
+                "NUM": { bg: "rgba(234, 179, 8, 0.1)", border: "rgba(234, 179, 8, 0.3)", text: "#fef08a" },
+                "ADP": { bg: "rgba(244, 63, 94, 0.1)", border: "rgba(244, 63, 94, 0.3)", text: "#fb7185" },
+                "PART": { bg: "rgba(239, 68, 68, 0.1)", border: "rgba(239, 68, 68, 0.3)", text: "#f87171" },
+                "CCONJ": { bg: "rgba(20, 184, 166, 0.1)", border: "rgba(20, 184, 166, 0.3)", text: "#2dd4bf" },
+                "SCONJ": { bg: "rgba(45, 212, 191, 0.08)", border: "rgba(45, 212, 191, 0.2)", text: "#99f6e4" },
+                "PUNCT": { bg: "rgba(156, 163, 175, 0.1)", border: "rgba(156, 163, 175, 0.2)", text: "#d1d5db" },
+                "SYM": { bg: "rgba(107, 114, 128, 0.15)", border: "rgba(107, 114, 128, 0.25)", text: "#e5e7eb" },
+                "X": { bg: "rgba(75, 85, 99, 0.15)", border: "rgba(75, 85, 99, 0.25)", text: "#f3f4f6" }
+            };
+
+            let html = '<div style="margin-top: 20px; border-top: 1px dashed rgba(255, 255, 255, 0.1); padding-top: 16px;">';
+            html += '<strong style="color: var(--success-color); display: block; margin-bottom: 12px; font-family: \'Outfit\', sans-serif; font-size: 15px; letter-spacing: 0.5px;">Token Analysis (Complete breakdown of all words):</strong>';
+            html += '<div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">';
+            
+            s.tokens.forEach((t, tIdx) => {
+                let explanation = "";
+                const wordLower = t.word.toLowerCase();
+                
+                if (t.tag === "DET") {
+                    if (["the", "a", "an"].includes(wordLower)) {
+                        explanation = "Determiner (DET) — acts as a standard article introducing a noun phrase.";
+                    } else if (["this", "that", "these", "those"].includes(wordLower)) {
+                        explanation = "Determiner (DET) — demonstrative modifier pointing directly to and modifying a specific noun.";
+                    } else {
+                        explanation = "Determiner (DET) — modifies a noun phrase to specify its reference.";
+                    }
+                } else if (t.tag === "NOUN") {
+                    const isNounAdjunct = tIdx < s.tokens.length - 1 && s.tokens[tIdx + 1].tag === "NOUN";
+                    const isTemporal = ["yesterday", "today", "tomorrow", "night", "week", "summer"].includes(wordLower);
+                    
+                    if (isNounAdjunct) {
+                        explanation = "Noun (NOUN) — functioning as a noun adjunct (compound modifier) describing the following noun.";
+                    } else if (isTemporal) {
+                        explanation = "Noun (NOUN) — temporal noun functioning as an adverbial modifier in the clause.";
+                    } else {
+                        explanation = "Noun (NOUN) — common noun representing a person, place, thing, or concept.";
+                    }
+                } else if (t.tag === "PRON") {
+                    const isPossessive = ["my", "your", "his", "her", "its", "our", "their"].includes(wordLower);
+                    const isRelative = ["who", "whom", "which", "what", "whoever", "whichever"].includes(wordLower);
+                    const isIndefinite = ["nothing", "everyone", "someone", "anyone", "everything", "something", "anything", "nobody", "somebody", "anybody", "none", "noone", "each"].includes(wordLower);
+                    const isDemonstrative = ["this", "that", "these", "those"].includes(wordLower);
+                    
+                    if (isPossessive) {
+                        explanation = "Pronoun (PRON) — possessive modifier (genitive personal pronoun) indicating ownership (dependency relation is `nmod:poss`).";
+                    } else if (isRelative) {
+                        explanation = "Pronoun (PRON) — relative pronoun introducing a subordinate relative clause.";
+                    } else if (isIndefinite) {
+                        explanation = "Pronoun (PRON) — indefinite pronoun acting as a nominal subject or object argument.";
+                    } else if (isDemonstrative) {
+                        explanation = "Pronoun (PRON) — demonstrative pronoun standing alone as a nominal argument.";
+                    } else {
+                        explanation = "Pronoun (PRON) — personal pronoun acting as a subject or object argument.";
+                    }
+                } else if (t.tag === "VERB") {
+                    const isParticiple = wordLower.endsWith("ing");
+                    const isPast = wordLower.endsWith("ed") || ["sat", "drank", "sang", "slept", "went", "wrote"].includes(wordLower);
+                    
+                    if (isParticiple) {
+                        explanation = "Verb (VERB) — active participle verb form modifying the clause.";
+                    } else if (isPast) {
+                        explanation = "Verb (VERB) — main lexical verb in the past tense showing the core action.";
+                    } else {
+                        explanation = "Verb (VERB) — main lexical verb showing the core action or state.";
+                    }
+                } else if (t.tag === "AUX") {
+                    const isModal = ["will", "would", "can", "could", "may", "might", "should", "must", "cannot"].includes(wordLower);
+                    if (isModal) {
+                        explanation = "Auxiliary Verb (AUX) — modal auxiliary expressing capability, obligation, or possibility.";
+                    } else {
+                        explanation = "Auxiliary Verb (AUX) — copula (linking verb) or passive/aspectual helper verb.";
+                    }
+                } else if (t.tag === "ADP") {
+                    const isParticle = ["up", "down", "away", "over"].includes(wordLower);
+                    if (isParticle) {
+                        explanation = "Adposition (ADP) — functions as an adverbial particle forming a phrasal verb compound (dependency relation is `compound:prt`).";
+                    } else {
+                        explanation = "Adposition (ADP) — preposition establishing a spatial, temporal, or logical relationship.";
+                    }
+                } else if (t.tag === "PART") {
+                    if (wordLower === "to") {
+                        explanation = "Particle (PART) — infinitival marker introducing a verb.";
+                    } else if (["not", "n't"].includes(wordLower)) {
+                        explanation = "Particle (PART) — negative particle used to negate a clause.";
+                    } else if (wordLower === "'s") {
+                        explanation = "Particle (PART) — possessive case marker.";
+                    } else {
+                        explanation = "Particle (PART) — grammatical particle.";
+                    }
+                } else if (t.tag === "CCONJ") {
+                    explanation = "Coordinating Conjunction (CCONJ) — joins words, phrases, or clauses of equal grammatical rank (like *and*, *but*, *or*).";
+                } else if (t.tag === "SCONJ") {
+                    explanation = "Subordinating Conjunction (SCONJ) — introduces a dependent or subordinate clause (like conditional *if* or complementizer *that*).";
+                } else if (t.tag === "ADJ") {
+                    explanation = "Adjective (ADJ) — descriptive word modifying a noun to specify its properties.";
+                } else if (t.tag === "NUM") {
+                    explanation = "Numeral (NUM) — cardinal number representing a specific quantity.";
+                } else if (t.tag === "PROPN") {
+                    explanation = "Proper Noun (PROPN) — specific named entity (person, place, brand, or landmark).";
+                } else if (t.tag === "PUNCT") {
+                    explanation = "Punctuation (PUNCT) — marks structural boundaries in the sentence.";
+                } else if (t.tag === "ADV") {
+                    explanation = "Adverb (ADV) — modifier that qualifies a verb, adjective, or another adverb (like *very*, *extremely*).";
+                } else {
+                    explanation = `${tagNames[t.tag] || t.tag} (${t.tag}) — grammatical token.`;
+                }
+
+                const c = tagColors[t.tag] || { bg: "rgba(255, 255, 255, 0.05)", border: "rgba(255, 255, 255, 0.15)", text: "var(--text-secondary)" };
+
+                html += `
+                <div style="display: flex; align-items: flex-start; gap: 12px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 8px; padding: 8px 12px; transition: background 0.2s ease;">
+                    <div style="min-width: 100px; max-width: 150px; font-weight: 700; color: var(--text-primary); font-family: monospace; font-size: 14px; word-break: break-all; margin-top: 1px;">
+                        "${t.word}"
+                    </div>
+                    <div style="background: ${c.bg}; border: 1px solid ${c.border}; color: ${c.text}; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 6px; text-transform: uppercase; font-family: monospace; letter-spacing: 0.5px; min-width: 65px; text-align: center; margin-top: 1px;">
+                        ${t.tag}
+                    </div>
+                    <div style="flex: 1; font-size: 13px; line-height: 1.5; color: var(--text-secondary); margin-top: 1px;">
+                        ${explanation}
+                    </div>
+                </div>`;
+            });
+            
+            html += '</div></div>';
+            return html;
+        }
+
+        // Load specific sentence
+        function loadSentence(index) {
+            currentIndex = index;
+            const s = activeSentences[currentIndex];
+            
+            // UI headers
+            sentenceLabel.innerText = `Sentence ${s.id}`;
+            difficultyBadge.innerText = s.difficulty;
+            difficultyBadge.className = `difficulty-badge ${s.difficulty}`;
+            sentenceText.innerText = s.text;
+
+            // Update active grid item
+            const gridBtns = sentenceGrid.querySelectorAll(".grid-btn");
+            activeSentences.forEach((item, idx) => {
+                const btn = document.getElementById(`grid-btn-${item.id}`);
+                if (btn) {
+                    btn.classList.remove("active");
+                    if (idx === currentIndex) btn.classList.add("active");
+                }
+            });
+
+            // Populate words and selectors
+            interactiveArea.innerHTML = "";
+            
+            s.tokens.forEach((t, tIdx) => {
+                const tokenDiv = document.createElement("div");
+                tokenDiv.className = "word-token";
+
+                const label = document.createElement("span");
+                label.className = "word-label";
+                label.innerText = t.word;
+
+                const select = document.createElement("select");
+                select.id = `select-${tIdx}`;
+                
+                // Add blank option
+                const defaultOpt = document.createElement("option");
+                defaultOpt.value = "";
+                defaultOpt.innerText = "Select Tag";
+                select.appendChild(defaultOpt);
+
+                // Add UPOS options
+                uposTags.forEach(tag => {
+                    const opt = document.createElement("option");
+                    opt.value = tag;
+                    opt.innerText = tag;
+                    select.appendChild(opt);
+                });
+
+                // Enter navigation listener
+                select.addEventListener("keydown", (e) => {
+                    if (e.key === "Enter") {
+                        e.preventDefault();
+                        const nextSelect = document.getElementById(`select-${tIdx + 1}`);
+                        if (nextSelect && !nextSelect.disabled) {
+                            nextSelect.focus();
+                        } else {
+                            checkAnswers();
+                        }
+                    }
+                });
+
+                tokenDiv.appendChild(label);
+                tokenDiv.appendChild(select);
+                
+                // If already checked previously, restore state
+                const checkedState = userAnswers[s.id]?.[tIdx];
+                if (checkedState) {
+                    select.value = checkedState.selected;
+                    if (checkedState.isCorrect) {
+                        select.classList.add("correct");
+                    } else {
+                        select.classList.add("incorrect");
+                        const reveal = document.createElement("span");
+                        reveal.className = "correct-reveal";
+                        reveal.innerText = `Correct: ${t.tag}`;
+                        tokenDiv.appendChild(reveal);
+                    }
+                    select.disabled = true;
+                }
+
+                interactiveArea.appendChild(tokenDiv);
+            });
+
+            // Check if already checked to reveal explanation
+            if (userAnswers[s.id]) {
+                explanationBox.style.display = "flex";
+                explanationText.innerHTML = formatExplanation(s.explanation) + generateTokenBreakdown(s);
+                checkBtn.innerText = "Try Again";
+            } else {
+                explanationBox.style.display = "none";
+                checkBtn.innerText = "Check Answers";
+                
+                // Keyboard focus initialization
+                const firstSelect = document.getElementById("select-0");
+                if (firstSelect && !firstSelect.disabled) {
+                    setTimeout(() => firstSelect.focus(), 50);
+                }
+            }
+
+            // Disable buttons if bounds reached
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex === activeSentences.length - 1;
+            
+            updateStats();
+        }
+
+        // Check current answers
+        function checkAnswers() {
+            const s = activeSentences[currentIndex];
+            
+            // If already checked, reset state to try again
+            if (userAnswers[s.id]) {
+                delete userAnswers[s.id];
+                loadSentence(currentIndex);
+                
+                // Remove grid classes
+                const btn = document.getElementById(`grid-btn-${s.id}`);
+                if (btn) btn.classList.remove("correct", "incorrect");
+                return;
+            }
+
+            let allCorrect = true;
+            userAnswers[s.id] = {};
+
+            s.tokens.forEach((t, tIdx) => {
+                const select = document.getElementById(`select-${tIdx}`);
+                const selectedVal = select.value;
+                const isCorrect = selectedVal === t.tag;
+                
+                select.disabled = true;
+                
+                if (isCorrect) {
+                    select.classList.add("correct");
+                } else {
+                    select.classList.add("incorrect");
+                    allCorrect = false;
+                    
+                    // Reveal correct tag
+                    const reveal = document.createElement("span");
+                    reveal.className = "correct-reveal";
+                    reveal.innerText = `Correct: ${t.tag}`;
+                    select.parentElement.appendChild(reveal);
+                }
+
+                userAnswers[s.id][tIdx] = {
+                    selected: selectedVal,
+                    isCorrect: isCorrect
+                };
+            });
+
+            // Highlight grid button
+            const btn = document.getElementById(`grid-btn-${s.id}`);
+            if (btn) {
+                btn.classList.remove("correct", "incorrect");
+                if (allCorrect) {
+                    btn.classList.add("correct");
+                } else {
+                    btn.classList.add("incorrect");
+                }
+            }
+
+            // Show explanation
+            explanationBox.style.display = "flex";
+            explanationText.innerHTML = formatExplanation(s.explanation) + generateTokenBreakdown(s);
+            checkBtn.innerText = "Try Again";
+
+            updateStats();
+        }
+
+        // Update overall stats
+        function updateStats() {
+            const completedIds = Object.keys(userAnswers);
+            const total = sentences.length;
+            
+            progressVal.innerText = `${completedIds.length} / ${total}`;
+
+            if (completedIds.length === 0) {
+                scoreVal.innerText = "0%";
+                return;
+            }
+
+            let correctTokens = 0;
+            let totalTokens = 0;
+
+            completedIds.forEach(id => {
+                const s = sentences.find(x => x.id === parseInt(id));
+                const sAns = userAnswers[id];
+                s.tokens.forEach((_, tIdx) => {
+                    totalTokens++;
+                    if (sAns[tIdx]?.isCorrect) {
+                        correctTokens++;
+                    }
+                });
+            });
+
+            const percent = Math.round((correctTokens / totalTokens) * 100);
+            scoreVal.innerText = `${percent}%`;
+        }
+
+        // Navigation actions
+        prevBtn.addEventListener("click", () => {
+            if (currentIndex > 0) loadSentence(currentIndex - 1);
+        });
+
+        nextBtn.addEventListener("click", () => {
+            if (currentIndex < activeSentences.length - 1) loadSentence(currentIndex + 1);
+        });
+
+        checkBtn.addEventListener("click", checkAnswers);
+
+        // Jump Overlay functions
+        const jumpOverlay = document.getElementById("jump-overlay");
+        const jumpInput = document.getElementById("jump-input");
+
+        function openJumpOverlay() {
+            jumpOverlay.classList.add("active");
+            jumpInput.value = "";
+            setTimeout(() => jumpInput.focus(), 50);
+        }
+
+        function closeJumpOverlay() {
+            jumpOverlay.classList.remove("active");
+            jumpInput.blur();
+        }
+
+        function confirmJump() {
+            const val = parseInt(jumpInput.value);
+            if (!isNaN(val) && val >= 1 && val <= sentences.length) {
+                const idx = activeSentences.findIndex(s => s.id === val);
+                if (idx !== -1) {
+                    loadSentence(idx);
+                }
+                closeJumpOverlay();
+            } else {
+                jumpInput.style.borderColor = "var(--error-color)";
+                jumpInput.style.boxShadow = "0 0 0 3px rgba(239, 68, 68, 0.2)";
+                setTimeout(() => {
+                    jumpInput.style.borderColor = "";
+                    jumpInput.style.boxShadow = "";
+                }, 300);
+            }
+        }
+
+        jumpOverlay.addEventListener("click", (e) => {
+            if (e.target.id === "jump-overlay") {
+                closeJumpOverlay();
+            }
+        });
+
+        // Global Keyboard Event Listener
+        window.addEventListener("keydown", (e) => {
+            // Jump Overlay keys
+            if (jumpOverlay.classList.contains("active")) {
+                if (e.key === "Escape") {
+                    closeJumpOverlay();
+                } else if (e.key === "Enter") {
+                    e.preventDefault();
+                    confirmJump();
+                }
+                return;
+            }
+
+            // Skip keys if typing inside input
+            if (document.activeElement.tagName === "INPUT") {
+                return;
+            }
+
+            // Skip select tags hotkeys (handled individually by selects)
+            if (document.activeElement.tagName === "SELECT") {
+                if (e.key === "Enter") {
+                    return; // Enter handled by select keydown
+                }
+                // Arrow navigation between selects if needed
+                const match = document.activeElement.id.match(/^select-(\d+)$/);
+                if (match) {
+                    const tIdx = parseInt(match[1]);
+                    if (e.key === "ArrowLeft") {
+                        const prevSelect = document.getElementById(`select-${tIdx - 1}`);
+                        if (prevSelect && !prevSelect.disabled) {
+                            e.preventDefault();
+                            prevSelect.focus();
+                        }
+                    } else if (e.key === "ArrowRight") {
+                        const nextSelect = document.getElementById(`select-${tIdx + 1}`);
+                        if (nextSelect && !nextSelect.disabled) {
+                            e.preventDefault();
+                            nextSelect.focus();
+                        }
+                    }
+                }
+                return;
+            }
+
+            const key = e.key.toLowerCase();
+            if (e.key === "ArrowLeft") {
+                e.preventDefault();
+                if (currentIndex > 0) loadSentence(currentIndex - 1);
+            } else if (e.key === "ArrowRight") {
+                e.preventDefault();
+                if (currentIndex < activeSentences.length - 1) loadSentence(currentIndex + 1);
+            } else if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                checkAnswers();
+            } else if (key === "s") {
+                e.preventDefault();
+                shuffleToggle.checked = !shuffleToggle.checked;
+                shuffleToggle.dispatchEvent(new Event('change'));
+            } else if (key === "g") {
+                e.preventDefault();
+                openJumpOverlay();
+            }
+        });
+
+        // Load dataset and run
+        async function initQuiz() {
+            try {
+                const res = await fetch("data.json");
+                if (!res.ok) throw new Error(`Failed to load quiz data: ${res.statusText}`);
+                sentences = await res.json();
+                activeSentences = [...sentences];
+                initGrid();
+                loadSentence(0);
+            } catch (err) {
+                console.error(err);
+                document.getElementById("sentence-text").innerHTML = 
+                    `<span style="color: var(--error-color); font-weight: bold;">Error loading quiz data!</span><br>` +
+                    `<span style="font-size: 13px; color: var(--text-secondary); display: block; margin-top: 10px; line-height: 1.6;">` +
+                    `Make sure you are serving this page using a web server (e.g. <code>python3 -m http.server</code> or hosting on Vercel) instead of opening it directly via <code>file://</code>.` +
+                    `</span>`;
+            }
+        }
+        initQuiz();
+    </script>
+</body>
+</html>

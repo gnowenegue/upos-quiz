@@ -1,0 +1,4258 @@
+[
+    {
+        "id": 1,
+        "difficulty": "simple",
+        "text": "The dog barked at the cat .",
+        "tokens": [
+            {
+                "word": "The",
+                "tag": "DET"
+            },
+            {
+                "word": "dog",
+                "tag": "NOUN"
+            },
+            {
+                "word": "barked",
+                "tag": "VERB"
+            },
+            {
+                "word": "at",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "cat",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *The dog* is the subject (the one performing the action), and *barked* is the action verb (in the past tense). The small word *at* acts as a link connecting the barking action to its target, *the cat*.\n\n📝 **Key Tagging Rules:** Nouns representing animals (*dog*, *cat*) are tagged as **NOUN**. Articles (*The*, *the*) are determiners that introduce these nouns, tagged as **DET**. The relational word *at* is a preposition, tagged as **ADP** (Adposition)."
+    },
+    {
+        "id": 2,
+        "difficulty": "simple",
+        "text": "She bought a new book yesterday .",
+        "tokens": [
+            {
+                "word": "She",
+                "tag": "PRON"
+            },
+            {
+                "word": "bought",
+                "tag": "VERB"
+            },
+            {
+                "word": "a",
+                "tag": "DET"
+            },
+            {
+                "word": "new",
+                "tag": "ADJ"
+            },
+            {
+                "word": "book",
+                "tag": "NOUN"
+            },
+            {
+                "word": "yesterday",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *She* is the person doing the action (subject pronoun), and *bought* is the transitive action verb. The thing being bought is *a new book* (direct object), and the word *yesterday* tells us *when* it happened.\n\n📝 **Key Tagging Rules:** The word **yesterday** functions syntactically as a temporal noun phrase modifier of the verb, so it is tagged as **NOUN** under standard UD guidelines rather than ADV. The word *new* is an adjective (**ADJ**) modifying the noun *book* (**NOUN**)."
+    },
+    {
+        "id": 3,
+        "difficulty": "simple",
+        "text": "We walked to the park in the afternoon .",
+        "tokens": [
+            {
+                "word": "We",
+                "tag": "PRON"
+            },
+            {
+                "word": "walked",
+                "tag": "VERB"
+            },
+            {
+                "word": "to",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "park",
+                "tag": "NOUN"
+            },
+            {
+                "word": "in",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "afternoon",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *We* is the subject pronoun. The action is *walked*. The phrase *to the park* explains the destination (where), and *in the afternoon* explains the timeframe (when).\n\n📝 **Key Tagging Rules:** The words **to** and **in** are prepositions, tagged as **ADP** (Adposition) because they establish location and time relationships. The words *park* and *afternoon* are standard common nouns, tagged as **NOUN**."
+    },
+    {
+        "id": 4,
+        "difficulty": "simple",
+        "text": "The apples on the tree are red .",
+        "tokens": [
+            {
+                "word": "The",
+                "tag": "DET"
+            },
+            {
+                "word": "apples",
+                "tag": "NOUN"
+            },
+            {
+                "word": "on",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "tree",
+                "tag": "NOUN"
+            },
+            {
+                "word": "are",
+                "tag": "AUX"
+            },
+            {
+                "word": "red",
+                "tag": "ADJ"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The subject is *The apples*, which is modified by the phrase *on the tree*. The word *are* acts as a bridge linking the subject *apples* to its descriptive color, *red*.\n\n📝 **Key Tagging Rules:** The linking verb **are** (copula) is tagged as an auxiliary (**AUX**) in UD because it acts as a grammatical helper rather than a lexical action. The word **red** is a predicate adjective (**ADJ**) describing the apples."
+    },
+    {
+        "id": 5,
+        "difficulty": "simple",
+        "text": "He runs very fast .",
+        "tokens": [
+            {
+                "word": "He",
+                "tag": "PRON"
+            },
+            {
+                "word": "runs",
+                "tag": "VERB"
+            },
+            {
+                "word": "very",
+                "tag": "ADV"
+            },
+            {
+                "word": "fast",
+                "tag": "ADV"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *He* is the pronoun subject. *runs* is the action verb. The word *fast* describes *how* he runs, and the word *very* modifies *fast* to show the intensity.\n\n📝 **Key Tagging Rules:** **fast** is an adverb (**ADV**) here because it modifies the verb *runs*. **very** is also an adverb (**ADV**) because it modifies the other adverb *fast*."
+    },
+    {
+        "id": 6,
+        "difficulty": "simple",
+        "text": "They live in a beautiful house .",
+        "tokens": [
+            {
+                "word": "They",
+                "tag": "PRON"
+            },
+            {
+                "word": "live",
+                "tag": "VERB"
+            },
+            {
+                "word": "in",
+                "tag": "ADP"
+            },
+            {
+                "word": "a",
+                "tag": "DET"
+            },
+            {
+                "word": "beautiful",
+                "tag": "ADJ"
+            },
+            {
+                "word": "house",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *They* is the pronoun subject. *live* is the action verb. The prepositional phrase *in a beautiful house* details the physical location.\n\n📝 **Key Tagging Rules:** **beautiful** is a descriptive adjective (**ADJ**) modifying the noun **house** (**NOUN**). The preposition **in** is tagged as **ADP** (Adposition)."
+    },
+    {
+        "id": 7,
+        "difficulty": "simple",
+        "text": "The sun shines brightly today .",
+        "tokens": [
+            {
+                "word": "The",
+                "tag": "DET"
+            },
+            {
+                "word": "sun",
+                "tag": "NOUN"
+            },
+            {
+                "word": "shines",
+                "tag": "VERB"
+            },
+            {
+                "word": "brightly",
+                "tag": "ADV"
+            },
+            {
+                "word": "today",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *The sun* is the subject noun phrase. *shines* is the intransitive action verb. The word *brightly* describes the manner of shining, and *today* indicates the timeframe.\n\n📝 **Key Tagging Rules:** **brightly** is an adverb of manner (**ADV**). Like *yesterday*, the word **today** functions syntactically as a temporal noun phrase modifier of the verb and is tagged as **NOUN** under UD guidelines."
+    },
+    {
+        "id": 8,
+        "difficulty": "simple",
+        "text": "A small bird sang in the garden .",
+        "tokens": [
+            {
+                "word": "A",
+                "tag": "DET"
+            },
+            {
+                "word": "small",
+                "tag": "ADJ"
+            },
+            {
+                "word": "bird",
+                "tag": "NOUN"
+            },
+            {
+                "word": "sang",
+                "tag": "VERB"
+            },
+            {
+                "word": "in",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "garden",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The subject is *A small bird* (a noun modified by an adjective and a determiner). The action is *sang*, and the location is *in the garden*.\n\n📝 **Key Tagging Rules:** **small** is a size adjective (**ADJ**) modifying the noun *bird* (**NOUN**). **garden** is a common noun (**NOUN**), and **in** is the preposition (**ADP**)."
+    },
+    {
+        "id": 9,
+        "difficulty": "simple",
+        "text": "She drank a glass of water .",
+        "tokens": [
+            {
+                "word": "She",
+                "tag": "PRON"
+            },
+            {
+                "word": "drank",
+                "tag": "VERB"
+            },
+            {
+                "word": "a",
+                "tag": "DET"
+            },
+            {
+                "word": "glass",
+                "tag": "NOUN"
+            },
+            {
+                "word": "of",
+                "tag": "ADP"
+            },
+            {
+                "word": "water",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *She* is the subject pronoun. *drank* is the past-tense action verb. The direct object is *a glass of water*, which contains two nouns linked by a preposition.\n\n📝 **Key Tagging Rules:** **glass** and **water** are both common nouns (**NOUN**). They are connected by **of**, which acts as a preposition (**ADP**)."
+    },
+    {
+        "id": 10,
+        "difficulty": "simple",
+        "text": "The children played in the snow .",
+        "tokens": [
+            {
+                "word": "The",
+                "tag": "DET"
+            },
+            {
+                "word": "children",
+                "tag": "NOUN"
+            },
+            {
+                "word": "played",
+                "tag": "VERB"
+            },
+            {
+                "word": "in",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "snow",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *The children* is the subject noun phrase. *played* is the past-tense verb. The prepositional phrase *in the snow* describes the environment.\n\n📝 **Key Tagging Rules:** **children** and **snow** are standard common nouns, tagged as **NOUN**. The past-tense verb **played** is tagged as **VERB**."
+    },
+    {
+        "id": 11,
+        "difficulty": "simple",
+        "text": "He lives near the quiet river .",
+        "tokens": [
+            {
+                "word": "He",
+                "tag": "PRON"
+            },
+            {
+                "word": "lives",
+                "tag": "VERB"
+            },
+            {
+                "word": "near",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "quiet",
+                "tag": "ADJ"
+            },
+            {
+                "word": "river",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *He* is the pronoun subject. *lives* is the present-tense verb. The prepositional phrase *near the quiet river* describes the location, containing an adjective and a noun.\n\n📝 **Key Tagging Rules:** **near** acts as a spatial preposition, tagged as **ADP** (Adposition). **quiet** is an adjective (**ADJ**) modifying the noun **river** (**NOUN**)."
+    },
+    {
+        "id": 12,
+        "difficulty": "simple",
+        "text": "My brother sleeps on the couch .",
+        "tokens": [
+            {
+                "word": "My",
+                "tag": "PRON"
+            },
+            {
+                "word": "brother",
+                "tag": "NOUN"
+            },
+            {
+                "word": "sleeps",
+                "tag": "VERB"
+            },
+            {
+                "word": "on",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "couch",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The subject is *My brother* (a noun modified by ownership). The action is *sleeps*, and the location is *on the couch*.\n\n📝 **Key Tagging Rules:** Under UD guidelines, possessive determiners like **My** are tagged as pronouns (**PRON**) because they act as genitive personal modifiers (dependency relation is `nmod:poss`). **brother** and **couch** are standard nouns (**NOUN**)."
+    },
+    {
+        "id": 13,
+        "difficulty": "simple",
+        "text": "We watched a funny movie last night .",
+        "tokens": [
+            {
+                "word": "We",
+                "tag": "PRON"
+            },
+            {
+                "word": "watched",
+                "tag": "VERB"
+            },
+            {
+                "word": "a",
+                "tag": "DET"
+            },
+            {
+                "word": "funny",
+                "tag": "ADJ"
+            },
+            {
+                "word": "movie",
+                "tag": "NOUN"
+            },
+            {
+                "word": "last",
+                "tag": "ADJ"
+            },
+            {
+                "word": "night",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *We* is the subject pronoun. *watched* is the main verb. The direct object is *a funny movie*, and *last night* indicates the timeframe.\n\n📝 **Key Tagging Rules:** **funny** and **last** are both descriptive adjectives, tagged as **ADJ**. **movie** and **night** are common nouns, tagged as **NOUN**."
+    },
+    {
+        "id": 14,
+        "difficulty": "simple",
+        "text": "The train arrived at the station .",
+        "tokens": [
+            {
+                "word": "The",
+                "tag": "DET"
+            },
+            {
+                "word": "train",
+                "tag": "NOUN"
+            },
+            {
+                "word": "arrived",
+                "tag": "VERB"
+            },
+            {
+                "word": "at",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "station",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *The train* is the subject. *arrived* is the past-tense action. The prepositional phrase *at the station* establishes the arrival point.\n\n📝 **Key Tagging Rules:** **train** and **station** are standard common nouns (**NOUN**). The relational word **at** is a spatial preposition, tagged as **ADP**."
+    },
+    {
+        "id": 15,
+        "difficulty": "simple",
+        "text": "You are very kind to her .",
+        "tokens": [
+            {
+                "word": "You",
+                "tag": "PRON"
+            },
+            {
+                "word": "are",
+                "tag": "AUX"
+            },
+            {
+                "word": "very",
+                "tag": "ADV"
+            },
+            {
+                "word": "kind",
+                "tag": "ADJ"
+            },
+            {
+                "word": "to",
+                "tag": "ADP"
+            },
+            {
+                "word": "her",
+                "tag": "PRON"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *You* is the subject. *are* links this subject to its description, *kind*. The intensifier *very* modifies *kind*, and *to her* specifies the target of this kindness.\n\n📝 **Key Tagging Rules:** **are** is the copula, tagged as an auxiliary (**AUX**). **kind** is the description, tagged as an adjective (**ADJ**). **her** is a personal pronoun, tagged as **PRON**."
+    },
+    {
+        "id": 16,
+        "difficulty": "hard",
+        "text": "The project feasibility study was completed last week .",
+        "tokens": [
+            {
+                "word": "The",
+                "tag": "DET"
+            },
+            {
+                "word": "project",
+                "tag": "NOUN"
+            },
+            {
+                "word": "feasibility",
+                "tag": "NOUN"
+            },
+            {
+                "word": "study",
+                "tag": "NOUN"
+            },
+            {
+                "word": "was",
+                "tag": "AUX"
+            },
+            {
+                "word": "completed",
+                "tag": "VERB"
+            },
+            {
+                "word": "last",
+                "tag": "ADJ"
+            },
+            {
+                "word": "week",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The subject is *The project feasibility study*. The action is passive (*was completed*), and *last week* is the timeframe.\n\n📝 **Key Tagging Rules:** **project** and **feasibility** modify the head noun *study*. In UD, nouns modifying other nouns in a compound are tagged as **NOUN** (relation is `compound`). **was** is the passive auxiliary (**AUX**), and **completed** is the lexical main verb (**VERB**)."
+    },
+    {
+        "id": 17,
+        "difficulty": "hard",
+        "text": "The children , who were tired from the trip , slept immediately .",
+        "tokens": [
+            {
+                "word": "The",
+                "tag": "DET"
+            },
+            {
+                "word": "children",
+                "tag": "NOUN"
+            },
+            {
+                "word": ",",
+                "tag": "PUNCT"
+            },
+            {
+                "word": "who",
+                "tag": "PRON"
+            },
+            {
+                "word": "were",
+                "tag": "AUX"
+            },
+            {
+                "word": "tired",
+                "tag": "ADJ"
+            },
+            {
+                "word": "from",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "trip",
+                "tag": "NOUN"
+            },
+            {
+                "word": ",",
+                "tag": "PUNCT"
+            },
+            {
+                "word": "slept",
+                "tag": "VERB"
+            },
+            {
+                "word": "immediately",
+                "tag": "ADV"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The main clause is *The children slept immediately*. Inserted inside is a relative clause (*who were tired from the trip*) that describes the children.\n\n📝 **Key Tagging Rules:** **who** is a relative pronoun, tagged as **PRON**. **were** is the copula inside the relative clause, tagged as **AUX**. **tired** is a predicative adjective, tagged as **ADJ**."
+    },
+    {
+        "id": 18,
+        "difficulty": "hard",
+        "text": "A new bridge is being built across the wide river .",
+        "tokens": [
+            {
+                "word": "A",
+                "tag": "DET"
+            },
+            {
+                "word": "new",
+                "tag": "ADJ"
+            },
+            {
+                "word": "bridge",
+                "tag": "NOUN"
+            },
+            {
+                "word": "is",
+                "tag": "AUX"
+            },
+            {
+                "word": "being",
+                "tag": "AUX"
+            },
+            {
+                "word": "built",
+                "tag": "VERB"
+            },
+            {
+                "word": "across",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "wide",
+                "tag": "ADJ"
+            },
+            {
+                "word": "river",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The subject *A new bridge* is receiving the action. The verb phrase *is being built* shows an ongoing passive action, and *across the wide river* indicates the location.\n\n📝 **Key Tagging Rules:** This sentence showcases a continuous passive auxiliary chain: **is** (progressive aspect helper, **AUX**) + **being** (passive voice helper, **AUX**) + **built** (main action verb, **VERB**)."
+    },
+    {
+        "id": 19,
+        "difficulty": "hard",
+        "text": "The government official announced the new economic policies .",
+        "tokens": [
+            {
+                "word": "The",
+                "tag": "DET"
+            },
+            {
+                "word": "government",
+                "tag": "NOUN"
+            },
+            {
+                "word": "official",
+                "tag": "NOUN"
+            },
+            {
+                "word": "announced",
+                "tag": "VERB"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "new",
+                "tag": "ADJ"
+            },
+            {
+                "word": "economic",
+                "tag": "ADJ"
+            },
+            {
+                "word": "policies",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *The government official* is the subject noun phrase. *announced* is the action verb, and *the new economic policies* is the direct object.\n\n📝 **Key Tagging Rules:** **government** acts as a noun adjunct compound modifier and is tagged as **NOUN** (modifies *official*). **economic** is derived from *economy*, but behaves as a true adjective and is tagged as **ADJ** (modifies *policies*)."
+    },
+    {
+        "id": 20,
+        "difficulty": "hard",
+        "text": "Having finished his homework , the boy went outside to play .",
+        "tokens": [
+            {
+                "word": "Having",
+                "tag": "AUX"
+            },
+            {
+                "word": "finished",
+                "tag": "VERB"
+            },
+            {
+                "word": "his",
+                "tag": "PRON"
+            },
+            {
+                "word": "homework",
+                "tag": "NOUN"
+            },
+            {
+                "word": ",",
+                "tag": "PUNCT"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "boy",
+                "tag": "NOUN"
+            },
+            {
+                "word": "went",
+                "tag": "VERB"
+            },
+            {
+                "word": "outside",
+                "tag": "ADV"
+            },
+            {
+                "word": "to",
+                "tag": "PART"
+            },
+            {
+                "word": "play",
+                "tag": "VERB"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The first part (*Having finished his homework*) explains what happened first. The main clause (*the boy went outside to play*) explains the main action.\n\n📝 **Key Tagging Rules:** This sentence features a perfect aspect participle clause introduced by the helper **Having** (**AUX**) + lexical verb **finished** (**VERB**). **outside** is a directional adverb (**ADV**). **to** is the infinitive particle (**PART**)."
+    },
+    {
+        "id": 21,
+        "difficulty": "hard",
+        "text": "That she succeeded surprised all of us .",
+        "tokens": [
+            {
+                "word": "That",
+                "tag": "SCONJ"
+            },
+            {
+                "word": "she",
+                "tag": "PRON"
+            },
+            {
+                "word": "succeeded",
+                "tag": "VERB"
+            },
+            {
+                "word": "surprised",
+                "tag": "VERB"
+            },
+            {
+                "word": "all",
+                "tag": "DET"
+            },
+            {
+                "word": "of",
+                "tag": "ADP"
+            },
+            {
+                "word": "us",
+                "tag": "PRON"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The subject is the clause *That she succeeded*. The main verb is *surprised*, and the object is *all of us*.\n\n📝 **Key Tagging Rules:** The word **That** introduces a subject complement clause and is tagged as a subordinating conjunction (**SCONJ**). **all** functions as a quantifier/predeterminer and is tagged as a determiner (**DET**)."
+    },
+    {
+        "id": 22,
+        "difficulty": "hard",
+        "text": "The car parked outside belongs to the new professor .",
+        "tokens": [
+            {
+                "word": "The",
+                "tag": "DET"
+            },
+            {
+                "word": "car",
+                "tag": "NOUN"
+            },
+            {
+                "word": "parked",
+                "tag": "VERB"
+            },
+            {
+                "word": "outside",
+                "tag": "ADV"
+            },
+            {
+                "word": "belongs",
+                "tag": "VERB"
+            },
+            {
+                "word": "to",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "new",
+                "tag": "ADJ"
+            },
+            {
+                "word": "professor",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The main clause is *The car belongs to the new professor*. The phrase *parked outside* is a reduced clause modifying the noun *car*.\n\n📝 **Key Tagging Rules:** **parked** is a past participle verb (**VERB**) acting as an adjectival modifier. **belongs** is the main finite lexical verb (**VERB**) of the complete sentence."
+    },
+    {
+        "id": 23,
+        "difficulty": "hard",
+        "text": "A list of candidates was submitted to the selection committee .",
+        "tokens": [
+            {
+                "word": "A",
+                "tag": "DET"
+            },
+            {
+                "word": "list",
+                "tag": "NOUN"
+            },
+            {
+                "word": "of",
+                "tag": "ADP"
+            },
+            {
+                "word": "candidates",
+                "tag": "NOUN"
+            },
+            {
+                "word": "was",
+                "tag": "AUX"
+            },
+            {
+                "word": "submitted",
+                "tag": "VERB"
+            },
+            {
+                "word": "to",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "selection",
+                "tag": "NOUN"
+            },
+            {
+                "word": "committee",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *A list of candidates* is the subject. The action is passive (*was submitted*), and *to the selection committee* is the destination.\n\n📝 **Key Tagging Rules:** **was** is the passive auxiliary (**AUX**), and **submitted** is the main verb (**VERB**). **selection** is a noun adjunct modifying *committee*, so it remains tagged as **NOUN** under UD guidelines."
+    },
+    {
+        "id": 24,
+        "difficulty": "hard",
+        "text": "To read books is a wonderful hobby .",
+        "tokens": [
+            {
+                "word": "To",
+                "tag": "PART"
+            },
+            {
+                "word": "read",
+                "tag": "VERB"
+            },
+            {
+                "word": "books",
+                "tag": "NOUN"
+            },
+            {
+                "word": "is",
+                "tag": "AUX"
+            },
+            {
+                "word": "a",
+                "tag": "DET"
+            },
+            {
+                "word": "wonderful",
+                "tag": "ADJ"
+            },
+            {
+                "word": "hobby",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The subject is the infinitive clause *To read books*. The linking verb *is* connects this action to the descriptive predicate noun phrase *a wonderful hobby*.\n\n📝 **Key Tagging Rules:** The word **To** introduces the infinitive verb and is tagged as a grammatical particle (**PART**). **is** acts as the copula linking verb, tagged as **AUX**."
+    },
+    {
+        "id": 25,
+        "difficulty": "hard",
+        "text": "They decided that they would travel to Japan next summer .",
+        "tokens": [
+            {
+                "word": "They",
+                "tag": "PRON"
+            },
+            {
+                "word": "decided",
+                "tag": "VERB"
+            },
+            {
+                "word": "that",
+                "tag": "SCONJ"
+            },
+            {
+                "word": "they",
+                "tag": "PRON"
+            },
+            {
+                "word": "would",
+                "tag": "AUX"
+            },
+            {
+                "word": "travel",
+                "tag": "VERB"
+            },
+            {
+                "word": "to",
+                "tag": "ADP"
+            },
+            {
+                "word": "Japan",
+                "tag": "PROPN"
+            },
+            {
+                "word": "next",
+                "tag": "ADJ"
+            },
+            {
+                "word": "summer",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The subject *They* performed the action *decided*. The object of their decision is the clause *that they would travel to Japan next summer*.\n\n📝 **Key Tagging Rules:** The word **that** introduces an object complement clause and is tagged as a subordinating conjunction (**SCONJ**). **would** is a modal auxiliary, tagged as **AUX**."
+    },
+    {
+        "id": 26,
+        "difficulty": "hard",
+        "text": "The old man , breathing heavily , sat down on the bench .",
+        "tokens": [
+            {
+                "word": "The",
+                "tag": "DET"
+            },
+            {
+                "word": "old",
+                "tag": "ADJ"
+            },
+            {
+                "word": "man",
+                "tag": "NOUN"
+            },
+            {
+                "word": ",",
+                "tag": "PUNCT"
+            },
+            {
+                "word": "breathing",
+                "tag": "VERB"
+            },
+            {
+                "word": "heavily",
+                "tag": "ADV"
+            },
+            {
+                "word": ",",
+                "tag": "PUNCT"
+            },
+            {
+                "word": "sat",
+                "tag": "VERB"
+            },
+            {
+                "word": "down",
+                "tag": "ADP"
+            },
+            {
+                "word": "on",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "bench",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The main clause is *The old man sat down on the bench*. The phrase *breathing heavily* describes the state of the man during this action.\n\n📝 **Key Tagging Rules:** **breathing** is an active participle verb form, tagged as **VERB**. Under UD English guidelines, phrasal verb particles like **down** (in *sat down*) are tagged as adpositions (**ADP**), mapping to the relation `compound:prt`."
+    },
+    {
+        "id": 27,
+        "difficulty": "hard",
+        "text": "Which option did you choose for the final exam ?",
+        "tokens": [
+            {
+                "word": "Which",
+                "tag": "DET"
+            },
+            {
+                "word": "option",
+                "tag": "NOUN"
+            },
+            {
+                "word": "did",
+                "tag": "AUX"
+            },
+            {
+                "word": "you",
+                "tag": "PRON"
+            },
+            {
+                "word": "choose",
+                "tag": "VERB"
+            },
+            {
+                "word": "for",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "final",
+                "tag": "ADJ"
+            },
+            {
+                "word": "exam",
+                "tag": "NOUN"
+            },
+            {
+                "word": "?",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The core question is *did you choose*. The word *Which* modifies the question's target *option*, and *for the final exam* is a prepositional modifier.\n\n📝 **Key Tagging Rules:** **Which** is an interrogative determiner modifying the noun *option*, tagged as **DET**. **did** is the question helper verb, tagged as an auxiliary (**AUX**)."
+    },
+    {
+        "id": 28,
+        "difficulty": "hard",
+        "text": "It is important that everyone understand the rules of the game .",
+        "tokens": [
+            {
+                "word": "It",
+                "tag": "PRON"
+            },
+            {
+                "word": "is",
+                "tag": "AUX"
+            },
+            {
+                "word": "important",
+                "tag": "ADJ"
+            },
+            {
+                "word": "that",
+                "tag": "SCONJ"
+            },
+            {
+                "word": "everyone",
+                "tag": "PRON"
+            },
+            {
+                "word": "understand",
+                "tag": "VERB"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "rules",
+                "tag": "NOUN"
+            },
+            {
+                "word": "of",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "game",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *It* is a dummy subject. *is* links this to the description *important*. The actual topic of importance is the clause *that everyone understand the rules of the game*.\n\n📝 **Key Tagging Rules:** **It** is a dummy/expletive pronoun, tagged as **PRON**. **understand** is a lexical verb in the subjunctive mood (plural base form following *everyone*), tagged as **VERB**."
+    },
+    {
+        "id": 29,
+        "difficulty": "hard",
+        "text": "The team played exceptionally well during the final match .",
+        "tokens": [
+            {
+                "word": "The",
+                "tag": "DET"
+            },
+            {
+                "word": "team",
+                "tag": "NOUN"
+            },
+            {
+                "word": "played",
+                "tag": "VERB"
+            },
+            {
+                "word": "exceptionally",
+                "tag": "ADV"
+            },
+            {
+                "word": "well",
+                "tag": "ADV"
+            },
+            {
+                "word": "during",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "final",
+                "tag": "ADJ"
+            },
+            {
+                "word": "match",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *The team* is the subject. *played* is the action verb. The adverb *well* describes how they played, modified by the intensifier *exceptionally*.\n\n📝 **Key Tagging Rules:** **exceptionally** is an adverb of degree (**ADV**) modifying the adverb of manner **well** (**ADV**). **during** is a preposition, tagged as **ADP**."
+    },
+    {
+        "id": 30,
+        "difficulty": "hard",
+        "text": "Her voice literally went around the world .",
+        "tokens": [
+            {
+                "word": "Her",
+                "tag": "PRON"
+            },
+            {
+                "word": "voice",
+                "tag": "NOUN"
+            },
+            {
+                "word": "literally",
+                "tag": "ADV"
+            },
+            {
+                "word": "went",
+                "tag": "VERB"
+            },
+            {
+                "word": "around",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "world",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *Her voice* is the subject. *went* is the action verb, modified by *literally*. The prepositional phrase *around the world* indicates the direction/scope of the movement.\n\n📝 **Key Tagging Rules:** Under UD rules, possessive modifiers like **Her** are tagged as pronouns (**PRON**) (dependency relation is `nmod:poss`). **around** is a spatial preposition, tagged as **ADP**."
+    },
+    {
+        "id": 31,
+        "difficulty": "hard",
+        "text": "The decision made by the committee was highly controversial .",
+        "tokens": [
+            {
+                "word": "The",
+                "tag": "DET"
+            },
+            {
+                "word": "decision",
+                "tag": "NOUN"
+            },
+            {
+                "word": "made",
+                "tag": "VERB"
+            },
+            {
+                "word": "by",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "committee",
+                "tag": "NOUN"
+            },
+            {
+                "word": "was",
+                "tag": "AUX"
+            },
+            {
+                "word": "highly",
+                "tag": "ADV"
+            },
+            {
+                "word": "controversial",
+                "tag": "ADJ"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The subject *The decision* is modified by the reduced relative clause *made by the committee*. The copula *was* links this subject to the descriptive adjective *controversial*.\n\n📝 **Key Tagging Rules:** **made** is a past participle verb, tagged as **VERB**. **highly** is an adverb modifying **controversial** (**ADJ**), tagged as **ADV**."
+    },
+    {
+        "id": 32,
+        "difficulty": "hard",
+        "text": "Running a successful business requires patience and dedication .",
+        "tokens": [
+            {
+                "word": "Running",
+                "tag": "VERB"
+            },
+            {
+                "word": "a",
+                "tag": "DET"
+            },
+            {
+                "word": "successful",
+                "tag": "ADJ"
+            },
+            {
+                "word": "business",
+                "tag": "NOUN"
+            },
+            {
+                "word": "requires",
+                "tag": "VERB"
+            },
+            {
+                "word": "patience",
+                "tag": "NOUN"
+            },
+            {
+                "word": "and",
+                "tag": "CCONJ"
+            },
+            {
+                "word": "dedication",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The subject of this sentence is a gerund/participle clause headed by **Running** (VERB), which takes a direct object noun phrase *a successful business*. **requires** is the main transitive verb (VERB), and *patience and dedication* are coordinated nouns acting as its object.\n\n📝 **Key Tagging Rules:** **Running** is a gerund acting as a verb, tagged as **VERB**. **patience** and **dedication** are abstract common nouns, tagged as **NOUN**."
+    },
+    {
+        "id": 33,
+        "difficulty": "hard",
+        "text": "That the experiment failed disappointed the scientific community .",
+        "tokens": [
+            {
+                "word": "That",
+                "tag": "SCONJ"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "experiment",
+                "tag": "NOUN"
+            },
+            {
+                "word": "failed",
+                "tag": "VERB"
+            },
+            {
+                "word": "disappointed",
+                "tag": "VERB"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "scientific",
+                "tag": "ADJ"
+            },
+            {
+                "word": "community",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** This sentence features a subject complement clause introduced by the subordinating conjunction **That** (SCONJ). The main verb is **disappointed** (VERB), and the direct object is *the scientific community*.\n\n📝 **Key Tagging Rules:** The word **That** introduces the subject clause, tagged as **SCONJ** (Subordinating Conjunction). **scientific** is a descriptive adjective modifying **community** (**NOUN**), tagged as **ADJ**."
+    },
+    {
+        "id": 34,
+        "difficulty": "hard",
+        "text": "The books on the shelf , which had been neglected for years , were covered in dust .",
+        "tokens": [
+            {
+                "word": "The",
+                "tag": "DET"
+            },
+            {
+                "word": "books",
+                "tag": "NOUN"
+            },
+            {
+                "word": "on",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "shelf",
+                "tag": "NOUN"
+            },
+            {
+                "word": ",",
+                "tag": "PUNCT"
+            },
+            {
+                "word": "which",
+                "tag": "PRON"
+            },
+            {
+                "word": "had",
+                "tag": "AUX"
+            },
+            {
+                "word": "been",
+                "tag": "AUX"
+            },
+            {
+                "word": "neglected",
+                "tag": "VERB"
+            },
+            {
+                "word": "for",
+                "tag": "ADP"
+            },
+            {
+                "word": "years",
+                "tag": "NOUN"
+            },
+            {
+                "word": ",",
+                "tag": "PUNCT"
+            },
+            {
+                "word": "were",
+                "tag": "AUX"
+            },
+            {
+                "word": "covered",
+                "tag": "VERB"
+            },
+            {
+                "word": "in",
+                "tag": "ADP"
+            },
+            {
+                "word": "dust",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The main clause is *The books were covered in dust*. The parenthetical clause *which had been neglected for years* is a relative clause describing the books.\n\n📝 **Key Tagging Rules:** This sentence showcases two passive structures: the relative clause contains the auxiliary chain **had** (AUX) + **been** (AUX) + **neglected** (VERB), and the main clause passive **were** (AUX) + **covered** (VERB)."
+    },
+    {
+        "id": 35,
+        "difficulty": "hard",
+        "text": "Seldom have we witnessed such a spectacular natural phenomenon .",
+        "tokens": [
+            {
+                "word": "Seldom",
+                "tag": "ADV"
+            },
+            {
+                "word": "have",
+                "tag": "AUX"
+            },
+            {
+                "word": "we",
+                "tag": "PRON"
+            },
+            {
+                "word": "witnessed",
+                "tag": "VERB"
+            },
+            {
+                "word": "such",
+                "tag": "DET"
+            },
+            {
+                "word": "a",
+                "tag": "DET"
+            },
+            {
+                "word": "spectacular",
+                "tag": "ADJ"
+            },
+            {
+                "word": "natural",
+                "tag": "ADJ"
+            },
+            {
+                "word": "phenomenon",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** This sentence showcases subject-auxiliary inversion (*have we witnessed*) triggered by the negative adverb *Seldom*. The direct object is *such a spectacular natural phenomenon*.\n\n📝 **Key Tagging Rules:** **Seldom** is a restrictive adverb, tagged as **ADV**. **such** acts as a predeterminer modifier, tagged as **DET**."
+    },
+    {
+        "id": 36,
+        "difficulty": "hard",
+        "text": "The project coordinator having resigned , the team had to adapt quickly .",
+        "tokens": [
+            {
+                "word": "The",
+                "tag": "DET"
+            },
+            {
+                "word": "project",
+                "tag": "NOUN"
+            },
+            {
+                "word": "coordinator",
+                "tag": "NOUN"
+            },
+            {
+                "word": "having",
+                "tag": "AUX"
+            },
+            {
+                "word": "resigned",
+                "tag": "VERB"
+            },
+            {
+                "word": ",",
+                "tag": "PUNCT"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "team",
+                "tag": "NOUN"
+            },
+            {
+                "word": "had",
+                "tag": "VERB"
+            },
+            {
+                "word": "to",
+                "tag": "PART"
+            },
+            {
+                "word": "adapt",
+                "tag": "VERB"
+            },
+            {
+                "word": "quickly",
+                "tag": "ADV"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The absolute clause *The project coordinator having resigned* explains the cause. The main clause *the team had to adapt quickly* shows the consequence.\n\n📝 **Key Tagging Rules:** **project** and **coordinator** are nouns, tagged as **NOUN**. **having** is an auxiliary verb, tagged as **AUX**. **had** functions as a main action verb of obligation, tagged as **VERB**."
+    },
+    {
+        "id": 37,
+        "difficulty": "hard",
+        "text": "What surprised me most was her composure during the crisis .",
+        "tokens": [
+            {
+                "word": "What",
+                "tag": "PRON"
+            },
+            {
+                "word": "surprised",
+                "tag": "VERB"
+            },
+            {
+                "word": "me",
+                "tag": "PRON"
+            },
+            {
+                "word": "most",
+                "tag": "ADV"
+            },
+            {
+                "word": "was",
+                "tag": "AUX"
+            },
+            {
+                "word": "her",
+                "tag": "PRON"
+            },
+            {
+                "word": "composure",
+                "tag": "NOUN"
+            },
+            {
+                "word": "during",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "crisis",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The subject is the free relative clause *What surprised me most*. The linking verb *was* connects this subject to the predicate phrase *her composure during the crisis*.\n\n📝 **Key Tagging Rules:** **What** functions as a headless relative pronoun, tagged as **PRON**. **was** is the copula, tagged as **AUX**."
+    },
+    {
+        "id": 38,
+        "difficulty": "hard",
+        "text": "It was the professor who discovered the ancient manuscript .",
+        "tokens": [
+            {
+                "word": "It",
+                "tag": "PRON"
+            },
+            {
+                "word": "was",
+                "tag": "AUX"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "professor",
+                "tag": "NOUN"
+            },
+            {
+                "word": "who",
+                "tag": "PRON"
+            },
+            {
+                "word": "discovered",
+                "tag": "VERB"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "ancient",
+                "tag": "ADJ"
+            },
+            {
+                "word": "manuscript",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The expletive construction *It was* focuses on *the professor*. The relative clause *who discovered the ancient manuscript* explains their action.\n\n📝 **Key Tagging Rules:** **It** is a placeholder/expletive pronoun, tagged as **PRON**. **who** is the relative pronoun introducing the relative clause, tagged as **PRON**."
+    },
+    {
+        "id": 39,
+        "difficulty": "hard",
+        "text": "Whichever path you choose will lead to adventure .",
+        "tokens": [
+            {
+                "word": "Whichever",
+                "tag": "DET"
+            },
+            {
+                "word": "path",
+                "tag": "NOUN"
+            },
+            {
+                "word": "you",
+                "tag": "PRON"
+            },
+            {
+                "word": "choose",
+                "tag": "VERB"
+            },
+            {
+                "word": "will",
+                "tag": "AUX"
+            },
+            {
+                "word": "lead",
+                "tag": "VERB"
+            },
+            {
+                "word": "to",
+                "tag": "ADP"
+            },
+            {
+                "word": "adventure",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The subject is the free relative clause *Whichever path you choose*. The verb phrase is *will lead*, and *to adventure* indicates the destination.\n\n📝 **Key Tagging Rules:** **Whichever** directly modifies the noun *path*, functioning as a relative/interrogative determiner, tagged as **DET**."
+    },
+    {
+        "id": 40,
+        "difficulty": "hard",
+        "text": "No sooner had they left the house than it started raining .",
+        "tokens": [
+            {
+                "word": "No",
+                "tag": "ADV"
+            },
+            {
+                "word": "sooner",
+                "tag": "ADV"
+            },
+            {
+                "word": "had",
+                "tag": "AUX"
+            },
+            {
+                "word": "they",
+                "tag": "PRON"
+            },
+            {
+                "word": "left",
+                "tag": "VERB"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "house",
+                "tag": "NOUN"
+            },
+            {
+                "word": "than",
+                "tag": "SCONJ"
+            },
+            {
+                "word": "it",
+                "tag": "PRON"
+            },
+            {
+                "word": "started",
+                "tag": "VERB"
+            },
+            {
+                "word": "raining",
+                "tag": "VERB"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The sentence features inversion (*had they left*). The two actions are linked correlatively by *No sooner ... than*.\n\n📝 **Key Tagging Rules:** **had** is the auxiliary verb triggering inversion, tagged as **AUX**. **than** is a subordinating conjunction introducing the adverbial clause, tagged as **SCONJ**."
+    },
+    {
+        "id": 41,
+        "difficulty": "hard",
+        "text": "Whether we win or lose matters less than our effort .",
+        "tokens": [
+            {
+                "word": "Whether",
+                "tag": "SCONJ"
+            },
+            {
+                "word": "we",
+                "tag": "PRON"
+            },
+            {
+                "word": "win",
+                "tag": "VERB"
+            },
+            {
+                "word": "or",
+                "tag": "CCONJ"
+            },
+            {
+                "word": "lose",
+                "tag": "VERB"
+            },
+            {
+                "word": "matters",
+                "tag": "VERB"
+            },
+            {
+                "word": "less",
+                "tag": "ADV"
+            },
+            {
+                "word": "than",
+                "tag": "ADP"
+            },
+            {
+                "word": "our",
+                "tag": "PRON"
+            },
+            {
+                "word": "effort",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The subject is the alternative clause *Whether we win or lose*. The verb is *matters*, modified by *less*, and *than our effort* is a prepositional phrase of comparison.\n\n📝 **Key Tagging Rules:** **Whether** is a subordinating conjunction, tagged as **SCONJ**. **than** is a preposition, tagged as **ADP**."
+    },
+    {
+        "id": 42,
+        "difficulty": "hard",
+        "text": "The report details how the new regulations will affect small businesses .",
+        "tokens": [
+            {
+                "word": "The",
+                "tag": "DET"
+            },
+            {
+                "word": "report",
+                "tag": "NOUN"
+            },
+            {
+                "word": "details",
+                "tag": "VERB"
+            },
+            {
+                "word": "how",
+                "tag": "ADV"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "new",
+                "tag": "ADJ"
+            },
+            {
+                "word": "regulations",
+                "tag": "NOUN"
+            },
+            {
+                "word": "will",
+                "tag": "AUX"
+            },
+            {
+                "word": "affect",
+                "tag": "VERB"
+            },
+            {
+                "word": "small",
+                "tag": "ADJ"
+            },
+            {
+                "word": "businesses",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *The report* is the subject. *details* is the verb. The direct object is the clause *how the new regulations will affect small businesses*.\n\n📝 **Key Tagging Rules:** **how** is a conjunctive adverb introducing the subordinate clause, tagged as **ADV**. **will** is a modal auxiliary verb, tagged as **AUX**."
+    },
+    {
+        "id": 43,
+        "difficulty": "hard",
+        "text": "Having been warned twice , he refrained from making another comment .",
+        "tokens": [
+            {
+                "word": "Having",
+                "tag": "AUX"
+            },
+            {
+                "word": "been",
+                "tag": "AUX"
+            },
+            {
+                "word": "warned",
+                "tag": "VERB"
+            },
+            {
+                "word": "twice",
+                "tag": "ADV"
+            },
+            {
+                "word": ",",
+                "tag": "PUNCT"
+            },
+            {
+                "word": "he",
+                "tag": "PRON"
+            },
+            {
+                "word": "refrained",
+                "tag": "VERB"
+            },
+            {
+                "word": "from",
+                "tag": "SCONJ"
+            },
+            {
+                "word": "making",
+                "tag": "VERB"
+            },
+            {
+                "word": "another",
+                "tag": "DET"
+            },
+            {
+                "word": "comment",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The participial clause *Having been warned twice* explains the cause. The main clause *he refrained from making another comment* explains the action.\n\n📝 **Key Tagging Rules:** **Having** (**AUX**) and **been** (**AUX**) act as aspectual helpers. **from** is a subordinating conjunction (**SCONJ**) because it introduces the clausal gerund *making*."
+    },
+    {
+        "id": 44,
+        "difficulty": "hard",
+        "text": "To master a new language requires hundreds of hours of practice .",
+        "tokens": [
+            {
+                "word": "To",
+                "tag": "PART"
+            },
+            {
+                "word": "master",
+                "tag": "VERB"
+            },
+            {
+                "word": "a",
+                "tag": "DET"
+            },
+            {
+                "word": "new",
+                "tag": "ADJ"
+            },
+            {
+                "word": "language",
+                "tag": "NOUN"
+            },
+            {
+                "word": "requires",
+                "tag": "VERB"
+            },
+            {
+                "word": "hundreds",
+                "tag": "NOUN"
+            },
+            {
+                "word": "of",
+                "tag": "ADP"
+            },
+            {
+                "word": "hours",
+                "tag": "NOUN"
+            },
+            {
+                "word": "of",
+                "tag": "ADP"
+            },
+            {
+                "word": "practice",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The subject is the infinitive clause *To master a new language*. The main verb is *requires*, and the object is *hundreds of hours of practice*.\n\n📝 **Key Tagging Rules:** **To** is the infinitive particle, tagged as **PART**. **hundreds**, **hours**, and **practice** are common nouns, tagged as **NOUN**."
+    },
+    {
+        "id": 45,
+        "difficulty": "hard",
+        "text": "The candidate whose speech inspired the audience won the election .",
+        "tokens": [
+            {
+                "word": "The",
+                "tag": "DET"
+            },
+            {
+                "word": "candidate",
+                "tag": "NOUN"
+            },
+            {
+                "word": "whose",
+                "tag": "PRON"
+            },
+            {
+                "word": "speech",
+                "tag": "NOUN"
+            },
+            {
+                "word": "inspired",
+                "tag": "VERB"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "audience",
+                "tag": "NOUN"
+            },
+            {
+                "word": "won",
+                "tag": "VERB"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "election",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The main clause is *The candidate won the election*. The relative clause *whose speech inspired the audience* describes the candidate.\n\n📝 **Key Tagging Rules:** **whose** functions as a possessive relative pronoun modifying the noun *speech*, tagged as **PRON** (relation is `nmod:poss`)."
+    },
+    {
+        "id": 46,
+        "difficulty": "hard",
+        "text": "The architecture of the cathedral is stunningly complex .",
+        "tokens": [
+            {
+                "word": "The",
+                "tag": "DET"
+            },
+            {
+                "word": "architecture",
+                "tag": "NOUN"
+            },
+            {
+                "word": "of",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "cathedral",
+                "tag": "NOUN"
+            },
+            {
+                "word": "is",
+                "tag": "AUX"
+            },
+            {
+                "word": "stunningly",
+                "tag": "ADV"
+            },
+            {
+                "word": "complex",
+                "tag": "ADJ"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The subject is *The architecture of the cathedral*. The copula *is* links this to the descriptive adjective *complex*, modified by *stunningly*.\n\n📝 **Key Tagging Rules:** **is** acts as the copula linking verb, tagged as **AUX**. **stunningly** is a degree adverb modifying **complex** (**ADJ**), tagged as **ADV**."
+    },
+    {
+        "id": 47,
+        "difficulty": "hard",
+        "text": "The software development lifecycle involves several iterative phases .",
+        "tokens": [
+            {
+                "word": "The",
+                "tag": "DET"
+            },
+            {
+                "word": "software",
+                "tag": "NOUN"
+            },
+            {
+                "word": "development",
+                "tag": "NOUN"
+            },
+            {
+                "word": "lifecycle",
+                "tag": "NOUN"
+            },
+            {
+                "word": "involves",
+                "tag": "VERB"
+            },
+            {
+                "word": "several",
+                "tag": "ADJ"
+            },
+            {
+                "word": "iterative",
+                "tag": "ADJ"
+            },
+            {
+                "word": "phases",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The subject is the complex three-noun compound *The software development lifecycle*. The verb is *involves*, and the object is *several iterative phases*.\n\n📝 **Key Tagging Rules:** In UD, all noun compound modifiers (like **software** and **development** modifying **lifecycle**) are tagged as **NOUN** (relation is `compound`). **iterative** is a descriptive adjective, tagged as **ADJ**."
+    },
+    {
+        "id": 48,
+        "difficulty": "hard",
+        "text": "They discussed the feasibility of constructing a new highway system .",
+        "tokens": [
+            {
+                "word": "They",
+                "tag": "PRON"
+            },
+            {
+                "word": "discussed",
+                "tag": "VERB"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "feasibility",
+                "tag": "NOUN"
+            },
+            {
+                "word": "of",
+                "tag": "SCONJ"
+            },
+            {
+                "word": "constructing",
+                "tag": "VERB"
+            },
+            {
+                "word": "a",
+                "tag": "DET"
+            },
+            {
+                "word": "new",
+                "tag": "ADJ"
+            },
+            {
+                "word": "highway",
+                "tag": "NOUN"
+            },
+            {
+                "word": "system",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *They* is the subject pronoun. *discussed* is the action. The object is *the feasibility*, modified by *of constructing a new highway system*.\n\n📝 **Key Tagging Rules:** **of** functions as a subordinating conjunction (**SCONJ**) because it introduces the clausal gerund *constructing*. **highway** is a noun adjunct modifying **system** (**NOUN**), tagged as **NOUN**."
+    },
+    {
+        "id": 49,
+        "difficulty": "hard",
+        "text": "The documents , neatly organized in folders , were placed on the desk .",
+        "tokens": [
+            {
+                "word": "The",
+                "tag": "DET"
+            },
+            {
+                "word": "documents",
+                "tag": "NOUN"
+            },
+            {
+                "word": ",",
+                "tag": "PUNCT"
+            },
+            {
+                "word": "neatly",
+                "tag": "ADV"
+            },
+            {
+                "word": "organized",
+                "tag": "VERB"
+            },
+            {
+                "word": "in",
+                "tag": "ADP"
+            },
+            {
+                "word": "folders",
+                "tag": "NOUN"
+            },
+            {
+                "word": ",",
+                "tag": "PUNCT"
+            },
+            {
+                "word": "were",
+                "tag": "AUX"
+            },
+            {
+                "word": "placed",
+                "tag": "VERB"
+            },
+            {
+                "word": "on",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "desk",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The subject *The documents* is modified by the reduced clause *neatly organized in folders*. The main verb is the passive *were placed*, and the location is *on the desk*.\n\n📝 **Key Tagging Rules:** **organized** is a past participle verb form in a reduced clause, tagged as **VERB**. **were** is the passive auxiliary, tagged as **AUX**."
+    },
+    {
+        "id": 50,
+        "difficulty": "hard",
+        "text": "Whoever designed this website understands user experience design .",
+        "tokens": [
+            {
+                "word": "Whoever",
+                "tag": "PRON"
+            },
+            {
+                "word": "designed",
+                "tag": "VERB"
+            },
+            {
+                "word": "this",
+                "tag": "DET"
+            },
+            {
+                "word": "website",
+                "tag": "NOUN"
+            },
+            {
+                "word": "understands",
+                "tag": "VERB"
+            },
+            {
+                "word": "user",
+                "tag": "NOUN"
+            },
+            {
+                "word": "experience",
+                "tag": "NOUN"
+            },
+            {
+                "word": "design",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The subject is the relative clause *Whoever designed this website*. The verb is *understands*, and the object is the compound noun *user experience design*.\n\n📝 **Key Tagging Rules:** **Whoever** is a relative pronoun, tagged as **PRON**. **user**, **experience**, and **design** are nouns, tagged as **NOUN**."
+    },
+    {
+        "id": 51,
+        "difficulty": "tricky",
+        "text": "I sat in the back seat of the car .",
+        "tokens": [
+            {
+                "word": "I",
+                "tag": "PRON"
+            },
+            {
+                "word": "sat",
+                "tag": "VERB"
+            },
+            {
+                "word": "in",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "back",
+                "tag": "ADJ"
+            },
+            {
+                "word": "seat",
+                "tag": "NOUN"
+            },
+            {
+                "word": "of",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "car",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *I* is the subject pronoun. *sat* is the action verb. The prepositional phrase *in the back seat of the car* indicates the location.\n\n📝 **Key Tagging Rules:** In the phrase *back seat*, the word **back** directly modifies the noun *seat*, functioning as a descriptive adjective (**ADJ**). **seat** and **car** are common nouns (**NOUN**)."
+    },
+    {
+        "id": 52,
+        "difficulty": "tricky",
+        "text": "I sat in the back of the car .",
+        "tokens": [
+            {
+                "word": "I",
+                "tag": "PRON"
+            },
+            {
+                "word": "sat",
+                "tag": "VERB"
+            },
+            {
+                "word": "in",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "back",
+                "tag": "NOUN"
+            },
+            {
+                "word": "of",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "car",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *I* is the subject pronoun. *sat* is the verb. The phrase *in the back of the car* explains the location.\n\n📝 **Key Tagging Rules:** Unlike the phrase *back seat*, **back** here stands alone as the head of a noun phrase introduced by *the*, making it a Noun (**NOUN**)."
+    },
+    {
+        "id": 53,
+        "difficulty": "tricky",
+        "text": "They backed back slowly .",
+        "tokens": [
+            {
+                "word": "They",
+                "tag": "PRON"
+            },
+            {
+                "word": "backed",
+                "tag": "VERB"
+            },
+            {
+                "word": "back",
+                "tag": "ADV"
+            },
+            {
+                "word": "slowly",
+                "tag": "ADV"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *They* is the subject pronoun. *backed* is the past-tense action. The word *back* explains the direction, and *slowly* describes the speed.\n\n📝 **Key Tagging Rules:** **backed** is the past-tense main action verb (**VERB**). The second **back** acts as a directional adverb (**ADV**) modifying the verb *backed*."
+    },
+    {
+        "id": 54,
+        "difficulty": "tricky",
+        "text": "We will back your decision .",
+        "tokens": [
+            {
+                "word": "We",
+                "tag": "PRON"
+            },
+            {
+                "word": "will",
+                "tag": "AUX"
+            },
+            {
+                "word": "back",
+                "tag": "VERB"
+            },
+            {
+                "word": "your",
+                "tag": "PRON"
+            },
+            {
+                "word": "decision",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *We* is the subject pronoun. *will* is the helper. The word *back* represents the core action (to support), and *your decision* is the target of support.\n\n📝 **Key Tagging Rules:** **will** is a modal auxiliary verb, tagged as **AUX**. **back** functions as the core lexical action verb, tagged as **VERB**."
+    },
+    {
+        "id": 55,
+        "difficulty": "tricky",
+        "text": "I have to go to the store .",
+        "tokens": [
+            {
+                "word": "I",
+                "tag": "PRON"
+            },
+            {
+                "word": "have",
+                "tag": "VERB"
+            },
+            {
+                "word": "to",
+                "tag": "PART"
+            },
+            {
+                "word": "go",
+                "tag": "VERB"
+            },
+            {
+                "word": "to",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "store",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *I* is the subject. *have* shows obligation. The phrase *to go* is the action, and *to the store* is the destination.\n\n📝 **Key Tagging Rules:** The first **to** (before *go*) is an infinitive marker, tagged as **PART**. The second **to** (before *the store*) is a spatial preposition, tagged as **ADP**."
+    },
+    {
+        "id": 56,
+        "difficulty": "tricky",
+        "text": "He is about to leave .",
+        "tokens": [
+            {
+                "word": "He",
+                "tag": "PRON"
+            },
+            {
+                "word": "is",
+                "tag": "AUX"
+            },
+            {
+                "word": "about",
+                "tag": "ADJ"
+            },
+            {
+                "word": "to",
+                "tag": "PART"
+            },
+            {
+                "word": "leave",
+                "tag": "VERB"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *He* is the subject. *is* is the linking verb. The phrase *about to leave* explains the imminent state.\n\n📝 **Key Tagging Rules:** In the semi-auxiliary *be about to*, the word **about** is tagged as an adjective (**ADJ**) under UD EWT guidelines (functions as a predicative modifier). **to** is the infinitive particle (**PART**)."
+    },
+    {
+        "id": 57,
+        "difficulty": "tricky",
+        "text": "We spent about ten dollars .",
+        "tokens": [
+            {
+                "word": "We",
+                "tag": "PRON"
+            },
+            {
+                "word": "spent",
+                "tag": "VERB"
+            },
+            {
+                "word": "about",
+                "tag": "ADV"
+            },
+            {
+                "word": "ten",
+                "tag": "NUM"
+            },
+            {
+                "word": "dollars",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *We* is the subject. *spent* is the action verb. The target is *ten dollars*, modified by the approximation *about*.\n\n📝 **Key Tagging Rules:** When **about** is used as an approximator before a number (*ten*), it functions as an adverbial modifier and is tagged as **ADV** (relation is `advmod` to the numeral)."
+    },
+    {
+        "id": 58,
+        "difficulty": "tricky",
+        "text": "She wrote a book about history .",
+        "tokens": [
+            {
+                "word": "She",
+                "tag": "PRON"
+            },
+            {
+                "word": "wrote",
+                "tag": "VERB"
+            },
+            {
+                "word": "a",
+                "tag": "DET"
+            },
+            {
+                "word": "book",
+                "tag": "NOUN"
+            },
+            {
+                "word": "about",
+                "tag": "ADP"
+            },
+            {
+                "word": "history",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *She* is the subject. *wrote* is the action verb. The object is *a book*, and *about history* defines the topic.\n\n📝 **Key Tagging Rules:** In this context, **about** is a standard topic preposition, tagged as **ADP** (Adposition) introducing the noun *history*."
+    },
+    {
+        "id": 59,
+        "difficulty": "tricky",
+        "text": "This is a great idea .",
+        "tokens": [
+            {
+                "word": "This",
+                "tag": "PRON"
+            },
+            {
+                "word": "is",
+                "tag": "AUX"
+            },
+            {
+                "word": "a",
+                "tag": "DET"
+            },
+            {
+                "word": "great",
+                "tag": "ADJ"
+            },
+            {
+                "word": "idea",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *This* is the subject. *is* is the linking verb. The description is *a great idea*.\n\n📝 **Key Tagging Rules:** Because **This** stands alone as the grammatical subject of the clause, it functions as a demonstrative pronoun, tagged as **PRON**."
+    },
+    {
+        "id": 60,
+        "difficulty": "tricky",
+        "text": "I like this idea .",
+        "tokens": [
+            {
+                "word": "I",
+                "tag": "PRON"
+            },
+            {
+                "word": "like",
+                "tag": "VERB"
+            },
+            {
+                "word": "this",
+                "tag": "DET"
+            },
+            {
+                "word": "idea",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *I* is the subject. *like* is the action verb. The target is *this idea*.\n\n📝 **Key Tagging Rules:** Because **this** directly modifies the noun *idea* (pointing out *which* idea), it functions as a demonstrative determiner, tagged as **DET**."
+    },
+    {
+        "id": 61,
+        "difficulty": "tricky",
+        "text": "Only you can do this .",
+        "tokens": [
+            {
+                "word": "Only",
+                "tag": "ADV"
+            },
+            {
+                "word": "you",
+                "tag": "PRON"
+            },
+            {
+                "word": "can",
+                "tag": "AUX"
+            },
+            {
+                "word": "do",
+                "tag": "VERB"
+            },
+            {
+                "word": "this",
+                "tag": "PRON"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The subject *you* is modified by *Only*. The verb phrase is *can do*, and *this* is the object.\n\n📝 **Key Tagging Rules:** **Only** acts as a focus modifier and is tagged as an adverb (**ADV**). The final **this** stands alone as the direct object of *do*, making it a pronoun (**PRON**)."
+    },
+    {
+        "id": 62,
+        "difficulty": "tricky",
+        "text": "He is the only child .",
+        "tokens": [
+            {
+                "word": "He",
+                "tag": "PRON"
+            },
+            {
+                "word": "is",
+                "tag": "AUX"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "only",
+                "tag": "ADJ"
+            },
+            {
+                "word": "child",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *He* is the subject. *is* is the linking verb. The predicate is *the only child*.\n\n📝 **Key Tagging Rules:** Here, **only** directly modifies the noun *child* (meaning 'sole'), functioning as a true adjective, tagged as **ADJ**."
+    },
+    {
+        "id": 63,
+        "difficulty": "tricky",
+        "text": "They had to be rescued .",
+        "tokens": [
+            {
+                "word": "They",
+                "tag": "PRON"
+            },
+            {
+                "word": "had",
+                "tag": "VERB"
+            },
+            {
+                "word": "to",
+                "tag": "PART"
+            },
+            {
+                "word": "be",
+                "tag": "AUX"
+            },
+            {
+                "word": "rescued",
+                "tag": "VERB"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *They* is the subject. *had* shows obligation. The passive action is *to be rescued*, introduced by the infinitive particle *to*.\n\n📝 **Key Tagging Rules:** **had** functions as a lexical main verb (**VERB**) showing obligation. **to** is the infinitive particle (**PART**). **be** is the passive auxiliary (**AUX**), and **rescued** is the main action verb in the passive voice, tagged as **VERB**."
+    },
+    {
+        "id": 64,
+        "difficulty": "tricky",
+        "text": "They had been rescued .",
+        "tokens": [
+            {
+                "word": "They",
+                "tag": "PRON"
+            },
+            {
+                "word": "had",
+                "tag": "AUX"
+            },
+            {
+                "word": "been",
+                "tag": "AUX"
+            },
+            {
+                "word": "rescued",
+                "tag": "VERB"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *They* is the subject. The passive action is *had been rescued*.\n\n📝 **Key Tagging Rules:** In this past perfect passive structure, **had** functions as an auxiliary aspectual verb, tagged as **AUX** (unlike the obligation *had* in sentence 43)."
+    },
+    {
+        "id": 65,
+        "difficulty": "tricky",
+        "text": "The heir apparent will arrive tomorrow .",
+        "tokens": [
+            {
+                "word": "The",
+                "tag": "DET"
+            },
+            {
+                "word": "heir",
+                "tag": "NOUN"
+            },
+            {
+                "word": "apparent",
+                "tag": "ADJ"
+            },
+            {
+                "word": "will",
+                "tag": "AUX"
+            },
+            {
+                "word": "arrive",
+                "tag": "VERB"
+            },
+            {
+                "word": "tomorrow",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The subject is *The heir apparent*. The verb phrase is *will arrive*, and *tomorrow* is the timeframe.\n\n📝 **Key Tagging Rules:** **apparent** is a postpositive adjective (placed after the noun it modifies), so it remains tagged as **ADJ**. **tomorrow** is a temporal noun modifying the verb, tagged as **NOUN**."
+    },
+    {
+        "id": 66,
+        "difficulty": "tricky",
+        "text": "We need to clean up the kitchen .",
+        "tokens": [
+            {
+                "word": "We",
+                "tag": "PRON"
+            },
+            {
+                "word": "need",
+                "tag": "VERB"
+            },
+            {
+                "word": "to",
+                "tag": "PART"
+            },
+            {
+                "word": "clean",
+                "tag": "VERB"
+            },
+            {
+                "word": "up",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "kitchen",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *We* is the subject. *need* is the verb. The infinitive clause is *to clean up*, and *the kitchen* is the target.\n\n📝 **Key Tagging Rules:** Under English UD guidelines, phrasal verb particles like **up** (in *clean up*) are tagged as adpositions (**ADP**), mapping to the relation `compound:prt`."
+    },
+    {
+        "id": 67,
+        "difficulty": "tricky",
+        "text": "The cat 's toy was lost .",
+        "tokens": [
+            {
+                "word": "The",
+                "tag": "DET"
+            },
+            {
+                "word": "cat",
+                "tag": "NOUN"
+            },
+            {
+                "word": "'s",
+                "tag": "PART"
+            },
+            {
+                "word": "toy",
+                "tag": "NOUN"
+            },
+            {
+                "word": "was",
+                "tag": "AUX"
+            },
+            {
+                "word": "lost",
+                "tag": "ADJ"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The subject is *The cat's toy*. The state is *was lost*.\n\n📝 **Key Tagging Rules:** The split token **'s** is a genitive case marker, tagged as a grammatical particle (**PART**). **lost** represents a state description here, tagged as an adjective (**ADJ**)."
+    },
+    {
+        "id": 68,
+        "difficulty": "tricky",
+        "text": "He 's playing in the yard .",
+        "tokens": [
+            {
+                "word": "He",
+                "tag": "PRON"
+            },
+            {
+                "word": "'s",
+                "tag": "AUX"
+            },
+            {
+                "word": "playing",
+                "tag": "VERB"
+            },
+            {
+                "word": "in",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "yard",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *He* is the subject pronoun. The continuous action is *'s playing*, and the prepositional phrase *in the yard* indicates the location.\n\n📝 **Key Tagging Rules:** The contracted token **'s** represents *is*, acting as the progressive auxiliary, tagged as **AUX**. **playing** is the main verb in present participle form, tagged as **VERB**."
+    },
+    {
+        "id": 69,
+        "difficulty": "tricky",
+        "text": "I carry these thoughts in the back of my head .",
+        "tokens": [
+            {
+                "word": "I",
+                "tag": "PRON"
+            },
+            {
+                "word": "carry",
+                "tag": "VERB"
+            },
+            {
+                "word": "these",
+                "tag": "DET"
+            },
+            {
+                "word": "thoughts",
+                "tag": "NOUN"
+            },
+            {
+                "word": "in",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "back",
+                "tag": "NOUN"
+            },
+            {
+                "word": "of",
+                "tag": "ADP"
+            },
+            {
+                "word": "my",
+                "tag": "PRON"
+            },
+            {
+                "word": "head",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *I* is the subject. *carry* is the verb. The object is *these thoughts*, and the location is *in the back of my head*.\n\n📝 **Key Tagging Rules:** **these** directly modifies the noun *thoughts*, functioning as a determiner (**DET**). **back** functions as a spatial noun head, tagged as **NOUN**."
+    },
+    {
+        "id": 70,
+        "difficulty": "tricky",
+        "text": "The news was incensed by that .",
+        "tokens": [
+            {
+                "word": "The",
+                "tag": "DET"
+            },
+            {
+                "word": "news",
+                "tag": "NOUN"
+            },
+            {
+                "word": "was",
+                "tag": "AUX"
+            },
+            {
+                "word": "incensed",
+                "tag": "VERB"
+            },
+            {
+                "word": "by",
+                "tag": "ADP"
+            },
+            {
+                "word": "that",
+                "tag": "PRON"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *The news* is the subject. The passive action is *was incensed*, and the cause is *by that*.\n\n📝 **Key Tagging Rules:** Unlike *she was incensed* (where *incensed* is an ADJ describing a state), the presence of the agent phrase **by that** forces a passive verbal analysis (**VERB**). **news** is an uncountable common noun, tagged as **NOUN**."
+    },
+    {
+        "id": 71,
+        "difficulty": "tricky",
+        "text": "Not only did he arrive late , but he also forgot his notes .",
+        "tokens": [
+            {
+                "word": "Not",
+                "tag": "PART"
+            },
+            {
+                "word": "only",
+                "tag": "ADV"
+            },
+            {
+                "word": "did",
+                "tag": "AUX"
+            },
+            {
+                "word": "he",
+                "tag": "PRON"
+            },
+            {
+                "word": "arrive",
+                "tag": "VERB"
+            },
+            {
+                "word": "late",
+                "tag": "ADV"
+            },
+            {
+                "word": ",",
+                "tag": "PUNCT"
+            },
+            {
+                "word": "but",
+                "tag": "CCONJ"
+            },
+            {
+                "word": "he",
+                "tag": "PRON"
+            },
+            {
+                "word": "also",
+                "tag": "ADV"
+            },
+            {
+                "word": "forgot",
+                "tag": "VERB"
+            },
+            {
+                "word": "his",
+                "tag": "PRON"
+            },
+            {
+                "word": "notes",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The sentence features two clauses joined by *but*. The first clause has subject-auxiliary inversion (*did he arrive*). The second clause adds another action (*forgot his notes*).\n\n📝 **Key Tagging Rules:** This sentence features focus particles **Not** (**PART**) and **only** (**ADV**). **did** is the question/inversion helper auxiliary (**AUX**). **late** is an adverb (**ADV**) modifying *arrive*."
+    },
+    {
+        "id": 72,
+        "difficulty": "tricky",
+        "text": "Provided that the weather remains clear , the launch will proceed tomorrow .",
+        "tokens": [
+            {
+                "word": "Provided",
+                "tag": "SCONJ"
+            },
+            {
+                "word": "that",
+                "tag": "SCONJ"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "weather",
+                "tag": "NOUN"
+            },
+            {
+                "word": "remains",
+                "tag": "VERB"
+            },
+            {
+                "word": "clear",
+                "tag": "ADJ"
+            },
+            {
+                "word": ",",
+                "tag": "PUNCT"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "launch",
+                "tag": "NOUN"
+            },
+            {
+                "word": "will",
+                "tag": "AUX"
+            },
+            {
+                "word": "proceed",
+                "tag": "VERB"
+            },
+            {
+                "word": "tomorrow",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The conditional clause (*Provided that the weather remains clear*) sets the terms. The main clause (*the launch will proceed tomorrow*) explains the outcome.\n\n📝 **Key Tagging Rules:** The conditional conjunction phrase **Provided that** is tagged as two subordinating conjunctions (**SCONJ** + **SCONJ**). **tomorrow** is a temporal noun, tagged as **NOUN**."
+    },
+    {
+        "id": 73,
+        "difficulty": "tricky",
+        "text": "She acted as though nothing had happened .",
+        "tokens": [
+            {
+                "word": "She",
+                "tag": "PRON"
+            },
+            {
+                "word": "acted",
+                "tag": "VERB"
+            },
+            {
+                "word": "as",
+                "tag": "SCONJ"
+            },
+            {
+                "word": "though",
+                "tag": "SCONJ"
+            },
+            {
+                "word": "nothing",
+                "tag": "PRON"
+            },
+            {
+                "word": "had",
+                "tag": "AUX"
+            },
+            {
+                "word": "happened",
+                "tag": "VERB"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *She* is the subject. *acted* is the main verb. The subordinate clause *as though nothing had happened* describes the manner of her action.\n\n📝 **Key Tagging Rules:** The subordinate clause of manner is introduced by the double subordinating conjunction **as though** (**SCONJ** + **SCONJ**). **nothing** is an indefinite pronoun, tagged as **PRON**."
+    },
+    {
+        "id": 74,
+        "difficulty": "tricky",
+        "text": "Had I known about the road closures , I would have taken a different route .",
+        "tokens": [
+            {
+                "word": "Had",
+                "tag": "AUX"
+            },
+            {
+                "word": "I",
+                "tag": "PRON"
+            },
+            {
+                "word": "known",
+                "tag": "VERB"
+            },
+            {
+                "word": "about",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "road",
+                "tag": "NOUN"
+            },
+            {
+                "word": "closures",
+                "tag": "NOUN"
+            },
+            {
+                "word": ",",
+                "tag": "PUNCT"
+            },
+            {
+                "word": "I",
+                "tag": "PRON"
+            },
+            {
+                "word": "would",
+                "tag": "AUX"
+            },
+            {
+                "word": "have",
+                "tag": "AUX"
+            },
+            {
+                "word": "taken",
+                "tag": "VERB"
+            },
+            {
+                "word": "a",
+                "tag": "DET"
+            },
+            {
+                "word": "different",
+                "tag": "ADJ"
+            },
+            {
+                "word": "route",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The conditional clause features subject-auxiliary inversion (*Had I known*). The main clause explains the alternative choice (*I would have taken a different route*).\n\n📝 **Key Tagging Rules:** **Had** is the auxiliary verb triggering inversion, tagged as **AUX**. The main clause has the modal auxiliary chain **would** (**AUX**) + **have** (**AUX**) + **taken** (**VERB**)."
+    },
+    {
+        "id": 75,
+        "difficulty": "tricky",
+        "text": "A poorly designed database can severely impact system performance .",
+        "tokens": [
+            {
+                "word": "A",
+                "tag": "DET"
+            },
+            {
+                "word": "poorly",
+                "tag": "ADV"
+            },
+            {
+                "word": "designed",
+                "tag": "ADJ"
+            },
+            {
+                "word": "database",
+                "tag": "NOUN"
+            },
+            {
+                "word": "can",
+                "tag": "AUX"
+            },
+            {
+                "word": "severely",
+                "tag": "ADV"
+            },
+            {
+                "word": "impact",
+                "tag": "VERB"
+            },
+            {
+                "word": "system",
+                "tag": "NOUN"
+            },
+            {
+                "word": "performance",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The subject is *A poorly designed database*. The verb phrase is *can severely impact*, and the object is *system performance*.\n\n📝 **Key Tagging Rules:** **designed** functions as a prenominal participial adjective, tagged as **ADJ**. **poorly** is an adverb of manner modifying the adjective *designed*, tagged as **ADV**."
+    },
+    {
+        "id": 76,
+        "difficulty": "tricky",
+        "text": "The plane flew round and round the field .",
+        "tokens": [
+            {
+                "word": "The",
+                "tag": "DET"
+            },
+            {
+                "word": "plane",
+                "tag": "NOUN"
+            },
+            {
+                "word": "flew",
+                "tag": "VERB"
+            },
+            {
+                "word": "round",
+                "tag": "ADV"
+            },
+            {
+                "word": "and",
+                "tag": "CCONJ"
+            },
+            {
+                "word": "round",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "field",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *The plane* is the subject. *flew* is the past-tense verb. The phrase *round and round the field* explains the circular movement.\n\n📝 **Key Tagging Rules:** Double **round** contrast: The first **round** functions as a directional adverb (**ADV**) modifying the verb *flew*. The second **round** functions as a spatial preposition (**ADP**) introducing the noun phrase *the field*."
+    },
+    {
+        "id": 77,
+        "difficulty": "tricky",
+        "text": "The children played on the round carousel .",
+        "tokens": [
+            {
+                "word": "The",
+                "tag": "DET"
+            },
+            {
+                "word": "children",
+                "tag": "NOUN"
+            },
+            {
+                "word": "played",
+                "tag": "VERB"
+            },
+            {
+                "word": "on",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "round",
+                "tag": "ADJ"
+            },
+            {
+                "word": "carousel",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *The children* is the subject. *played* is the verb. The prepositional phrase *on the round carousel* explains the location.\n\n📝 **Key Tagging Rules:** Here, **round** directly describes the physical shape of the carousel, functioning as a standard Adjective (ADJ)."
+    },
+    {
+        "id": 78,
+        "difficulty": "tricky",
+        "text": "We will round the corner shortly .",
+        "tokens": [
+            {
+                "word": "We",
+                "tag": "PRON"
+            },
+            {
+                "word": "will",
+                "tag": "AUX"
+            },
+            {
+                "word": "round",
+                "tag": "VERB"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "corner",
+                "tag": "NOUN"
+            },
+            {
+                "word": "shortly",
+                "tag": "ADV"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *We* is the subject. *will* is the helper. The word *round* is the core action (to go around), and *the corner* is the target.\n\n📝 **Key Tagging Rules:** **will** is a modal auxiliary verb, tagged as **AUX**. **round** functions as the base form lexical main verb (meaning 'to circle/bypass'), tagged as **VERB**."
+    },
+    {
+        "id": 79,
+        "difficulty": "tricky",
+        "text": "It is your turn to buy a round of drinks .",
+        "tokens": [
+            {
+                "word": "It",
+                "tag": "PRON"
+            },
+            {
+                "word": "is",
+                "tag": "AUX"
+            },
+            {
+                "word": "your",
+                "tag": "PRON"
+            },
+            {
+                "word": "turn",
+                "tag": "NOUN"
+            },
+            {
+                "word": "to",
+                "tag": "PART"
+            },
+            {
+                "word": "buy",
+                "tag": "VERB"
+            },
+            {
+                "word": "a",
+                "tag": "DET"
+            },
+            {
+                "word": "round",
+                "tag": "NOUN"
+            },
+            {
+                "word": "of",
+                "tag": "ADP"
+            },
+            {
+                "word": "drinks",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *It* is the dummy subject. *is* is the copula. The predicate is *your turn*, modified by the infinitive clause *to buy a round of drinks*.\n\n📝 **Key Tagging Rules:** Here, **round** is preceded by the indefinite article *a* and modified by *of drinks*, functioning as a common noun, tagged as **NOUN** (meaning a cycle/serving)."
+    },
+    {
+        "id": 80,
+        "difficulty": "tricky",
+        "text": "He left immediately after the meeting .",
+        "tokens": [
+            {
+                "word": "He",
+                "tag": "PRON"
+            },
+            {
+                "word": "left",
+                "tag": "VERB"
+            },
+            {
+                "word": "immediately",
+                "tag": "ADV"
+            },
+            {
+                "word": "after",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "meeting",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *He* is the subject. *left* is the action verb. The adverb *immediately* and prepositional phrase *after the meeting* detail the time of departure.\n\n📝 **Key Tagging Rules:** **left** functions as the past-tense main action verb, tagged as **VERB** (meaning 'departed')."
+    },
+    {
+        "id": 81,
+        "difficulty": "tricky",
+        "text": "Take the first street on the left .",
+        "tokens": [
+            {
+                "word": "Take",
+                "tag": "VERB"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "first",
+                "tag": "ADJ"
+            },
+            {
+                "word": "street",
+                "tag": "NOUN"
+            },
+            {
+                "word": "on",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "left",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The subject (you) is implied. The command is *Take the first street*. The phrase *on the left* explains which side to look for.\n\n📝 **Key Tagging Rules:** Here, **left** is preceded by the determiner *the* and stands alone as the head of the prepositional phrase, functioning as a noun, tagged as **NOUN**."
+    },
+    {
+        "id": 82,
+        "difficulty": "tricky",
+        "text": "Only three cookies are left .",
+        "tokens": [
+            {
+                "word": "Only",
+                "tag": "ADV"
+            },
+            {
+                "word": "three",
+                "tag": "NUM"
+            },
+            {
+                "word": "cookies",
+                "tag": "NOUN"
+            },
+            {
+                "word": "are",
+                "tag": "AUX"
+            },
+            {
+                "word": "left",
+                "tag": "ADJ"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** The subject *cookies* is modified by *Only three*. The verb *are* links this to the descriptive state *left*.\n\n📝 **Key Tagging Rules:** **Only** functions as a focus adverb modifying the numeral, tagged as **ADV**. **left** acts as a participial adjective describing the state of the cookies (meaning remaining), tagged as **ADJ**."
+    },
+    {
+        "id": 83,
+        "difficulty": "tricky",
+        "text": "They turned off the main road .",
+        "tokens": [
+            {
+                "word": "They",
+                "tag": "PRON"
+            },
+            {
+                "word": "turned",
+                "tag": "VERB"
+            },
+            {
+                "word": "off",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "main",
+                "tag": "ADJ"
+            },
+            {
+                "word": "road",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *They* is the subject. *turned* is the verb. The prepositional phrase *off the main road* explains where they turned.\n\n📝 **Key Tagging Rules:** **off** acts as a spatial preposition establishing movement away from a place, tagged as **ADP** (Adposition)."
+    },
+    {
+        "id": 84,
+        "difficulty": "tricky",
+        "text": "The alarm went off suddenly .",
+        "tokens": [
+            {
+                "word": "The",
+                "tag": "DET"
+            },
+            {
+                "word": "alarm",
+                "tag": "NOUN"
+            },
+            {
+                "word": "went",
+                "tag": "VERB"
+            },
+            {
+                "word": "off",
+                "tag": "ADP"
+            },
+            {
+                "word": "suddenly",
+                "tag": "ADV"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *The alarm* is the subject. *went* is the verb, modified by *off* and *suddenly*.\n\n📝 **Key Tagging Rules:** In UD guidelines, verbal particles forming phrasal verb compounds (like **off** in *went off*) are tagged as adpositions (**ADP**), mapping to the relation `compound:prt`."
+    },
+    {
+        "id": 85,
+        "difficulty": "tricky",
+        "text": "Today is an off day for the team .",
+        "tokens": [
+            {
+                "word": "Today",
+                "tag": "NOUN"
+            },
+            {
+                "word": "is",
+                "tag": "AUX"
+            },
+            {
+                "word": "an",
+                "tag": "DET"
+            },
+            {
+                "word": "off",
+                "tag": "ADJ"
+            },
+            {
+                "word": "day",
+                "tag": "NOUN"
+            },
+            {
+                "word": "for",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "team",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *Today* is the subject. *is* is the linking verb. The predicate description is *an off day for the team*.\n\n📝 **Key Tagging Rules:** Here, **off** directly modifies the noun *day* (meaning bad or inactive), functioning as a descriptive adjective, tagged as **ADJ**."
+    },
+    {
+        "id": 86,
+        "difficulty": "tricky",
+        "text": "We walked fast to catch the train .",
+        "tokens": [
+            {
+                "word": "We",
+                "tag": "PRON"
+            },
+            {
+                "word": "walked",
+                "tag": "VERB"
+            },
+            {
+                "word": "fast",
+                "tag": "ADV"
+            },
+            {
+                "word": "to",
+                "tag": "PART"
+            },
+            {
+                "word": "catch",
+                "tag": "VERB"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "train",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *We* is the subject. *walked* is the verb. The adverb *fast* describes how they walked, and the infinitive clause *to catch the train* explains their purpose.\n\n📝 **Key Tagging Rules:** **fast** is an adverb of manner modifying the action verb *walked*, tagged as **ADV**."
+    },
+    {
+        "id": 87,
+        "difficulty": "tricky",
+        "text": "They held a fast during the holiday .",
+        "tokens": [
+            {
+                "word": "They",
+                "tag": "PRON"
+            },
+            {
+                "word": "held",
+                "tag": "VERB"
+            },
+            {
+                "word": "a",
+                "tag": "DET"
+            },
+            {
+                "word": "fast",
+                "tag": "NOUN"
+            },
+            {
+                "word": "during",
+                "tag": "ADP"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "holiday",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *They* is the subject. *held* is the verb. The object is *a fast*, and *during the holiday* indicates the timeframe.\n\n📝 **Key Tagging Rules:** Because **fast** is introduced by the indefinite article *a*, it functions as a common noun, tagged as **NOUN** (meaning a period of food abstinence)."
+    },
+    {
+        "id": 88,
+        "difficulty": "tricky",
+        "text": "They decided to fast for two days .",
+        "tokens": [
+            {
+                "word": "They",
+                "tag": "PRON"
+            },
+            {
+                "word": "decided",
+                "tag": "VERB"
+            },
+            {
+                "word": "to",
+                "tag": "PART"
+            },
+            {
+                "word": "fast",
+                "tag": "VERB"
+            },
+            {
+                "word": "for",
+                "tag": "ADP"
+            },
+            {
+                "word": "two",
+                "tag": "NUM"
+            },
+            {
+                "word": "days",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *They* is the subject. *decided* is the main verb. The infinitive clause *to fast* explains their decision, modified by *for two days*.\n\n📝 **Key Tagging Rules:** Preceded by the infinitive particle *to*, **fast** functions as the base form lexical main verb, tagged as **VERB**."
+    },
+    {
+        "id": 89,
+        "difficulty": "tricky",
+        "text": "He is a fast runner .",
+        "tokens": [
+            {
+                "word": "He",
+                "tag": "PRON"
+            },
+            {
+                "word": "is",
+                "tag": "AUX"
+            },
+            {
+                "word": "a",
+                "tag": "DET"
+            },
+            {
+                "word": "fast",
+                "tag": "ADJ"
+            },
+            {
+                "word": "runner",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *He* is the subject. *is* is the linking verb. The predicate is *a fast runner*.\n\n📝 **Key Tagging Rules:** Directly modifying the noun *runner*, **fast** behaves as a standard descriptive adjective, tagged as **ADJ**."
+    },
+    {
+        "id": 90,
+        "difficulty": "tricky",
+        "text": "This is a very hard question .",
+        "tokens": [
+            {
+                "word": "This",
+                "tag": "PRON"
+            },
+            {
+                "word": "is",
+                "tag": "AUX"
+            },
+            {
+                "word": "a",
+                "tag": "DET"
+            },
+            {
+                "word": "very",
+                "tag": "ADV"
+            },
+            {
+                "word": "hard",
+                "tag": "ADJ"
+            },
+            {
+                "word": "question",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *This* is the subject pronoun. *is* is the linking verb. The predicate noun phrase is *a very hard question*.\n\n📝 **Key Tagging Rules:** Directly modifying the noun *question*, **hard** is an adjective, tagged as **ADJ** (meaning difficult)."
+    },
+    {
+        "id": 91,
+        "difficulty": "tricky",
+        "text": "She works extremely hard .",
+        "tokens": [
+            {
+                "word": "She",
+                "tag": "PRON"
+            },
+            {
+                "word": "works",
+                "tag": "VERB"
+            },
+            {
+                "word": "extremely",
+                "tag": "ADV"
+            },
+            {
+                "word": "hard",
+                "tag": "ADV"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *She* is the subject pronoun. *works* is the verb. The word *hard* describes how she works, modified by *extremely*.\n\n📝 **Key Tagging Rules:** Modifying the action verb *works*, **hard** functions as an adverb of manner, tagged as **ADV**."
+    },
+    {
+        "id": 92,
+        "difficulty": "tricky",
+        "text": "We must but try our best .",
+        "tokens": [
+            {
+                "word": "We",
+                "tag": "PRON"
+            },
+            {
+                "word": "must",
+                "tag": "AUX"
+            },
+            {
+                "word": "but",
+                "tag": "ADV"
+            },
+            {
+                "word": "try",
+                "tag": "VERB"
+            },
+            {
+                "word": "our",
+                "tag": "PRON"
+            },
+            {
+                "word": "best",
+                "tag": "ADJ"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *We* is the subject. *must* is the helper. The focus modifier *but* modifies the verb phrase *try our best*.\n\n📝 **Key Tagging Rules:** When **but** is used in the formal/archaic sense meaning 'only/just', it functions as a focus adverb, tagged as **ADV**."
+    },
+    {
+        "id": 93,
+        "difficulty": "tricky",
+        "text": "Everyone attended the meeting but him .",
+        "tokens": [
+            {
+                "word": "Everyone",
+                "tag": "PRON"
+            },
+            {
+                "word": "attended",
+                "tag": "VERB"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "meeting",
+                "tag": "NOUN"
+            },
+            {
+                "word": "but",
+                "tag": "ADP"
+            },
+            {
+                "word": "him",
+                "tag": "PRON"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *Everyone* is the subject pronoun. *attended the meeting* is the core action. The phrase *but him* excludes him from this action.\n\n📝 **Key Tagging Rules:** Here, **but** means 'except' and functions as a preposition, tagged as **ADP** (Adposition) introducing the pronoun *him*."
+    },
+    {
+        "id": 94,
+        "difficulty": "tricky",
+        "text": "I like reading historical novels .",
+        "tokens": [
+            {
+                "word": "I",
+                "tag": "PRON"
+            },
+            {
+                "word": "like",
+                "tag": "VERB"
+            },
+            {
+                "word": "reading",
+                "tag": "VERB"
+            },
+            {
+                "word": "historical",
+                "tag": "ADJ"
+            },
+            {
+                "word": "novels",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *I* is the subject. *like* is the main verb. The direct object is the gerund clause *reading historical novels*.\n\n📝 **Key Tagging Rules:** **like** is the finite lexical main verb showing preference, tagged as **VERB**."
+    },
+    {
+        "id": 95,
+        "difficulty": "tricky",
+        "text": "She looks like her mother .",
+        "tokens": [
+            {
+                "word": "She",
+                "tag": "PRON"
+            },
+            {
+                "word": "looks",
+                "tag": "VERB"
+            },
+            {
+                "word": "like",
+                "tag": "ADP"
+            },
+            {
+                "word": "her",
+                "tag": "PRON"
+            },
+            {
+                "word": "mother",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *She* is the subject. *looks* is the copula-like verb. The phrase *like her mother* establishes the comparison.\n\n📝 **Key Tagging Rules:** **like** functions as a comparison preposition, tagged as **ADP** (Adposition) introducing the noun phrase *her mother*."
+    },
+    {
+        "id": 96,
+        "difficulty": "tricky",
+        "text": "We had similar experiences and the like .",
+        "tokens": [
+            {
+                "word": "We",
+                "tag": "PRON"
+            },
+            {
+                "word": "had",
+                "tag": "VERB"
+            },
+            {
+                "word": "similar",
+                "tag": "ADJ"
+            },
+            {
+                "word": "experiences",
+                "tag": "NOUN"
+            },
+            {
+                "word": "and",
+                "tag": "CCONJ"
+            },
+            {
+                "word": "the",
+                "tag": "DET"
+            },
+            {
+                "word": "like",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *We* is the subject. *had* is the action verb. The objects are *similar experiences* and *the like*.\n\n📝 **Key Tagging Rules:** Preceded by the determiner *the*, **like** functions as a noun meaning similar things, tagged as **NOUN**."
+    },
+    {
+        "id": 97,
+        "difficulty": "tricky",
+        "text": "You should do it like this .",
+        "tokens": [
+            {
+                "word": "You",
+                "tag": "PRON"
+            },
+            {
+                "word": "should",
+                "tag": "AUX"
+            },
+            {
+                "word": "do",
+                "tag": "VERB"
+            },
+            {
+                "word": "it",
+                "tag": "PRON"
+            },
+            {
+                "word": "like",
+                "tag": "ADP"
+            },
+            {
+                "word": "this",
+                "tag": "PRON"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *You* is the subject. *should do* is the verb phrase. The phrase *like this* explains how to do it.\n\n📝 **Key Tagging Rules:** **like** functions as a preposition, tagged as **ADP** (Adposition) establishing similarity to the demonstrative pronoun *this*."
+    },
+    {
+        "id": 98,
+        "difficulty": "tricky",
+        "text": "He is a man of like mind .",
+        "tokens": [
+            {
+                "word": "He",
+                "tag": "PRON"
+            },
+            {
+                "word": "is",
+                "tag": "AUX"
+            },
+            {
+                "word": "a",
+                "tag": "DET"
+            },
+            {
+                "word": "man",
+                "tag": "NOUN"
+            },
+            {
+                "word": "of",
+                "tag": "ADP"
+            },
+            {
+                "word": "like",
+                "tag": "ADJ"
+            },
+            {
+                "word": "mind",
+                "tag": "NOUN"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *He* is the subject. *is* is the linking verb. The predicate is *a man of like mind*.\n\n📝 **Key Tagging Rules:** Modifying the noun *mind* directly (meaning similar or matching), **like** behaves as an adjective, tagged as **ADJ**."
+    },
+    {
+        "id": 99,
+        "difficulty": "tricky",
+        "text": "That book is very interesting .",
+        "tokens": [
+            {
+                "word": "That",
+                "tag": "DET"
+            },
+            {
+                "word": "book",
+                "tag": "NOUN"
+            },
+            {
+                "word": "is",
+                "tag": "AUX"
+            },
+            {
+                "word": "very",
+                "tag": "ADV"
+            },
+            {
+                "word": "interesting",
+                "tag": "ADJ"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *That book* is the subject noun phrase. *is* is the linking verb. The predicate adjective is *interesting*, modified by *very*.\n\n📝 **Key Tagging Rules:** Because **That** directly modifies the noun *book* (pointing out *which* book), it functions as a demonstrative determiner, tagged as **DET**."
+    },
+    {
+        "id": 100,
+        "difficulty": "tricky",
+        "text": "I know that you will succeed .",
+        "tokens": [
+            {
+                "word": "I",
+                "tag": "PRON"
+            },
+            {
+                "word": "know",
+                "tag": "VERB"
+            },
+            {
+                "word": "that",
+                "tag": "SCONJ"
+            },
+            {
+                "word": "you",
+                "tag": "PRON"
+            },
+            {
+                "word": "will",
+                "tag": "AUX"
+            },
+            {
+                "word": "succeed",
+                "tag": "VERB"
+            },
+            {
+                "word": ".",
+                "tag": "PUNCT"
+            }
+        ],
+        "explanation": "🔍 **Linguistic Breakdown:** *I* is the subject. *know* is the main verb. The object of my knowledge is the clause *that you will succeed*.\n\n📝 **Key Tagging Rules:** The word **that** introduces a subordinate object complement clause, acting as a grammatical link, tagged as a subordinating conjunction (**SCONJ**)."
+    }
+]
