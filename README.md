@@ -2,6 +2,8 @@
 
 An interactive web application designed to help learners and linguistic enthusiasts master the **Universal Part-of-Speech (UPOS)** tagset. Built with a sleek, premium dark-mode interface, rich responsiveness, and comprehensive hotkey navigation.
 
+🚀 **Live Demo**: [upos-quiz.vercel.app](https://upos-quiz.vercel.app)
+
 ---
 
 ## 🌟 Key Features
